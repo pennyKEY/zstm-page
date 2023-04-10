@@ -1,0 +1,154 @@
+.collapse {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+}
+
+.logo {
+  &__img {
+    margin: 2%;
+    width: 30%;
+  }
+}
+
+.burger {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: space-between;
+  gap: 5px;
+  width: 14vw;
+  margin-right: 5%;
+  overflow: hidden;
+
+  &__bar {
+    width: 100%;
+    height: 5px;
+    background-color: #000;
+    transition: 0.2s ease-in-out;
+    border-radius: 6px;
+
+    &_fourth {
+      position: absolute;
+      top: 45%;
+      transform: rotate(45deg) translateX(-200%);
+    }
+
+    &_fifth {
+      position: absolute;
+      top: 35%;
+      transform: rotate(-45deg) translateX(200%);
+      transition: 0.2s 0.4s ease-in-out;
+    }
+  }
+}
+
+.active {
+  & .burger__bar {
+    animation: moveBurgerBar 0.2s ease-in-out forwards;
+  }
+
+  & .burger__bar_first,
+  & .burger__bar_third {
+    animation-delay: 0.2s;
+  }
+
+  & .burger__bar_fourth {
+    animation: showCloseBar1 0.2s 0.4s ease-in-out forwards;
+  }
+
+  & .burger__bar_fifth {
+    animation: showCloseBar2 0.2s 0.4s ease-in-out forwards;
+  }
+}
+
+.disactive {
+  & .burger__bar {
+    transform: translateX(100%);
+    animation: moveBurgerBarReturn 0.2s 0.2s ease-in-out forwards;
+  }
+
+  & .burger__bar_first,
+  & .burger__bar_third {
+    animation-delay: 0.4s;
+  }
+
+  & .burger__bar_fourth {
+    animation: showCloseBarReturn1 0.2s ease-in-out forwards;
+  }
+
+  & .burger__bar_fifth {
+    animation: showCloseBarReturn2 0.2s ease-in-out forwards;
+  }
+}
+
+// animations on click
+@keyframes moveBurgerBar {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(130%);
+  }
+}
+
+@keyframes showCloseBar1 {
+  from {
+    transform: rotate(45deg) translateX(-200%);
+  }
+  to {
+    transform: rotate(45deg) translateX(0);
+  }
+}
+
+@keyframes showCloseBar2 {
+  from {
+    transform: rotate(-45deg) translateX(200%);
+  }
+  to {
+    transform: rotate(-45deg) translateX(0);
+  }
+}
+
+// animations on click back
+@keyframes moveBurgerBarReturn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes showCloseBarReturn1 {
+  from {
+    transform: rotate(45deg) translateX(0);
+  }
+  to {
+    transform: rotate(45deg) translateX(-200%);
+  }
+}
+
+@keyframes showCloseBarReturn2 {
+  from {
+    transform: rotate(-45deg) translateX(0);
+  }
+  to {
+    transform: rotate(-45deg) translateX(200%);
+  }
+}
+
+@media (min-width: 320px) {
+  .burger {
+    width: 9vw;
+  }
+}
+
+@media (min-width: 425px) {
+  .burger {
+    width: 35px;
+  }
+}

@@ -1,7 +1,10 @@
 import type { AppProps } from "next/app";
 import Head from "next/head";
 
-import Menu from "@/components/menu/Menu";
+// import Menu from "@/components/menu/Menu";
+import Collapse from "@/components/menu/Collapse";
+import "../components/menu/collapse.scss";
+import "@/styles/global.scss";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -11,7 +14,8 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/icon.png" />
       </Head>
-      <Menu />
+      {/* <Menu /> */}
+      <Collapse />
       <Component {...pageProps} />
     </>
   );
