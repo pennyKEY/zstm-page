@@ -1,0 +1,84 @@
+// @import "./logo.scss";
+
+.menu {
+  display: none;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100vw;
+  color: black;
+  opacity: 0;
+  transform: translateY(50%);
+  animation: showMenu 0.4s 0.2s ease-in-out forwards;
+
+  &__item {
+    position: relative;
+    padding: 5px 15px;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background-color: #03f7eb;
+      transform: translateX(-101%);
+      transition: 0.2s ease-in-out;
+      z-index: -1;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background-color: #03f7eb;
+      transform: translateX(101%);
+      transition: 0.2s ease-in-out;
+      z-index: -1;
+    }
+
+    &:hover::after,
+    &:hover::before {
+      transform: none;
+    }
+  }
+
+  &__link {
+    width: 100%;
+    height: 100%;
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  &__list_items {
+    display: flex;
+    justify-content: center;
+    gap: 4%;
+    width: 70%;
+  }
+}
+
+@keyframes showMenu {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 1025px) {
+  .menu {
+    display: flex;
+  }
+}

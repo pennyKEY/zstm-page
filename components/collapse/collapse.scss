@@ -1,0 +1,73 @@
+@import "./animations.scss";
+@import "./burger.scss";
+@import "./modal.scss";
+@import "../menu/logo.scss";
+
+.collapse {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+}
+
+.active {
+  & + .modal {
+    transform: translateX(0);
+  }
+
+  & .burger__bar {
+    animation: moveBurgerBar 0.2s ease-in-out forwards;
+  }
+
+  & .burger__bar_first,
+  & .burger__bar_third {
+    animation-delay: 0.2s;
+  }
+
+  & .burger__bar_fourth {
+    animation: showCloseBar1 0.2s 0.4s ease-in-out forwards;
+  }
+
+  & .burger__bar_fifth {
+    animation: showCloseBar2 0.2s 0.4s ease-in-out forwards;
+  }
+}
+
+.disactive {
+  & .burger__bar {
+    transform: translateX(100%);
+    animation: moveBurgerBarReturn 0.2s 0.2s ease-in-out forwards;
+  }
+
+  & .burger__bar_first,
+  & .burger__bar_third {
+    animation-delay: 0.4s;
+  }
+
+  & .burger__bar_fourth {
+    animation: showCloseBarReturn1 0.2s ease-in-out forwards;
+  }
+
+  & .burger__bar_fifth {
+    animation: showCloseBarReturn2 0.2s ease-in-out forwards;
+  }
+}
+
+@media (min-width: 320px) {
+  .burger {
+    width: 9vw;
+  }
+}
+
+@media (min-width: 425px) {
+  .burger {
+    width: 35px;
+    margin-right: 2.3%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .collapse {
+    display: none !important;
+  }
+}

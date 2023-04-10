@@ -1,0 +1,84 @@
+// animations on click
+@keyframes moveBurgerBar {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(130%);
+  }
+}
+
+@keyframes showCloseBar1 {
+  from {
+    transform: rotate(45deg) translateX(-200%);
+  }
+  to {
+    transform: rotate(45deg) translateX(0);
+  }
+}
+
+@keyframes showCloseBar2 {
+  from {
+    transform: rotate(-45deg) translateX(200%);
+  }
+  to {
+    transform: rotate(-45deg) translateX(0);
+  }
+}
+
+// animations on click back
+@keyframes moveBurgerBarReturn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes showCloseBarReturn1 {
+  from {
+    transform: rotate(45deg) translateX(0);
+  }
+  to {
+    transform: rotate(45deg) translateX(-200%);
+  }
+}
+
+@keyframes showCloseBarReturn2 {
+  from {
+    transform: rotate(-45deg) translateX(0);
+  }
+  to {
+    transform: rotate(-45deg) translateX(200%);
+  }
+}
+
+@keyframes moveModal {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes moveModalReturn {
+  from {
+    transform: none;
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes showLink {
+  from {
+    opacity: 0;
+    top: 100%;
+  }
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}

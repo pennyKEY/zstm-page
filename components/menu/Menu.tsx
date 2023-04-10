@@ -1,14 +1,11 @@
 import Link from "next/link";
 
-import logo from "../../public/logo.png";
-import "./menu.scss";
+import Logo from "./Logo";
 
 export default function Menu() {
   return (
     <nav className="menu">
-      <div className="logo">
-        <img className="logo__img" src={logo.src} alt="logo ZSTMU" />
-      </div>
+      <Logo />
       <ul className="menu__list_items">
         <li className="menu__item">
           <Link className="menu__link" href="/">
