@@ -1,24 +1,30 @@
-import { useState, useRef } from "react";
+import { useRef, useState } from "react";
 
 export default function useBurger() {
-  const [showMenu, setShowMenu] = useState(true);
   const burgerDivRef = useRef<HTMLDivElement>(null);
+  const modalDivRef = useRef<HTMLDivElement>(null);
+  const [showModal, setShowModal] = useState(false);
 
   const showMenuHandler = () => {
-    if (showMenu) {
+    if (!showModal) {
       burgerDivRef.current?.classList.add("active");
+      modalDivRef.current?.classList.add("active");
+      modalDivRef.current?.classList.remove("disactive");
       burgerDivRef.current?.classList.remove("disactive");
     } else {
       burgerDivRef.current?.classList.remove("active");
+      modalDivRef.current?.classList.remove("active");
+      modalDivRef.current?.classList.add("disactive");
       burgerDivRef.current?.classList.add("disactive");
     }
 
-    setShowMenu(!showMenu);
+    setShowModal(!showModal);
   };
 
   return {
-    showMenu,
     burgerDivRef,
+    showModal,
+    modalDivRef,
     showMenuHandler,
   };
 }

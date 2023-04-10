@@ -23,6 +23,7 @@
   width: 14vw;
   margin-right: 5%;
   overflow: hidden;
+  cursor: pointer;
 
   &__bar {
     width: 100%;
@@ -46,7 +47,84 @@
   }
 }
 
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #eee;
+  opacity: 1;
+  transform: translateX(-100%);
+
+  &.active {
+    animation: moveModal 0.2s 0.2s ease-in-out forwards;
+
+    & .modal__link {
+      animation: showLink 0.3s 0.4s ease-in-out forwards;
+    }
+  }
+
+  &.disactive {
+    animation: moveModalReturn 0.2s ease-in-out;
+  }
+
+  &__list_items {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 45%;
+  }
+
+  &__item {
+    text-align: center;
+    width: 100%;
+    height: 10%;
+  }
+
+  &__link {
+    position: relative;
+    top: 100%;
+    height: 100%;
+    font-size: 25px;
+    color: #000;
+    text-decoration: none;
+    opacity: 0;
+
+    &.active {
+      font-weight: bold;
+      &::after {
+        width: 110%;
+      }
+    }
+
+    &:hover::after {
+      width: 110%;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -10%;
+      left: -5%;
+      width: 30%;
+      height: 120%;
+      background-color: rgba(0, 0, 0, 0.3);
+      transition: width 0.2s ease-in-out;
+    }
+  }
+}
+
 .active {
+  & + .modal {
+    transform: translateX(0);
+  }
+
   & .burger__bar {
     animation: moveBurgerBar 0.2s ease-in-out forwards;
   }
@@ -141,6 +219,35 @@
   }
 }
 
+@keyframes moveModal {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes moveModalReturn {
+  from {
+    transform: none;
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes showLink {
+  from {
+    opacity: 0;
+    top: 100%;
+  }
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}
+
 @media (min-width: 320px) {
   .burger {
     width: 9vw;
@@ -150,5 +257,6 @@
 @media (min-width: 425px) {
   .burger {
     width: 35px;
+    margin-right: 2.3%;
   }
 }
