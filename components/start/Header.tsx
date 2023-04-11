@@ -1,4 +1,5 @@
 import Dots from "../dots/Dots";
+import headerImg from "@/public/header.jpg";
 
 export default function Header() {
   return (
@@ -12,6 +13,14 @@ export default function Header() {
         Mechatronicznych
         <Dots />
       </h1>
+      {/* <img className="header__img" src={headerImg.src} alt="" /> */}
+      <div className="header__img">
+        <div
+          className="header__img_bg"
+          style={{ backgroundImage: `url('${headerImg.src}')` }}
+        ></div>
+        <div className="header__img_cover"></div>
+      </div>
     </header>
   );
 }
