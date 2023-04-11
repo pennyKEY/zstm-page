@@ -1,6 +1,8 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 
+import Header from "@/components/start/Header";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -9,7 +11,7 @@ export default function Home() {
       <Head>
         <title>Zespół Szkół Transportowo Mechatronicznych</title>
       </Head>
-      <h1>Witaj na stronie powitalnej</h1>
+      <Header />
     </>
   );
 }

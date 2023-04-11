@@ -1,0 +1,78 @@
+.dots {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  margin: 3% 1%;
+  gap: 2px;
+  width: 4vh;
+  height: 4vh;
+
+  &__dot {
+    width: 16%;
+    height: 15%;
+    border: 1px solid black;
+    border-radius: 50%;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 620px) {
+  .dots {
+    width: 5vh;
+    height: 5vh;
+
+    &__dot {
+      width: 19%;
+      height: 19%;
+    }
+  }
+}
+
+@media (orientation: landscape) and (min-width: 1024px) {
+  .dots {
+    width: 5vh;
+    height: 5vh;
+
+    &__dot {
+      width: 20%;
+      height: 20%;
+    }
+  }
+}
+
+@media (orientation: landscape) and (min-width: 1630px) {
+  .dots {
+    width: 4vh;
+    height: 4vh;
+
+    &__dot {
+      width: 20%;
+      height: 20%;
+    }
+  }
+}
+
+@media (orientation: portrait) {
+  .dots {
+    width: 7vw;
+    height: 7vw;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 540px) {
+  .dots {
+    width: 6vw;
+    height: 6vw;
+
+    &__dot {
+      width: 18%;
+      height: 18%;
+    }
+  }
+}
+
+@media (orientation: portrait) and (min-width: 740px) {
+  .dots {
+    width: 5vw;
+    height: 5vw;
+  }
+}
