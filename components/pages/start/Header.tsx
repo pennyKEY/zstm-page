@@ -1,4 +1,5 @@
 import Dots from "../../dots/Dots";
+import Rectangle from "../../shapes/Rectangle";
 import headerImg from "@/public/header.jpg";
 
 export default function Header() {
@@ -26,6 +27,7 @@ export default function Header() {
         </button>
         <button className="header__btn">O szkole</button>
       </div>
+      <Rectangle />
     </header>
   );
 }

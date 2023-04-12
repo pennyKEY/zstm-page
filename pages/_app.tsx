@@ -9,6 +9,7 @@ import "@/components/collapse/collapse.scss";
 import "@/components/menu/menu.scss";
 import "@/components/pages/start/header.scss";
 import "@/components/dots/dots.scss";
+import "@/components/shapes/shapes.scss";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
