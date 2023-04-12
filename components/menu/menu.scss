@@ -1,11 +1,10 @@
-// @import "./logo.scss";
+@import "../../styles/_variables.scss";
 
 .menu {
+  @include flexContainer(row, no-wrap, flex-start, center, flex-start, auto, 0);
   display: none;
-  justify-content: flex-start;
-  align-items: center;
   width: 100vw;
-  color: black;
+  color: #000;
   opacity: 0;
   transform: translateY(50%);
   animation: showMenu 0.4s 0.2s ease-in-out forwards;
@@ -24,7 +23,7 @@
       left: 0;
       width: 100%;
       height: 50%;
-      background-color: #03f7eb;
+      background-color: $main-color;
       transform: translateX(-101%);
       transition: 0.2s ease-in-out;
       z-index: -1;
@@ -37,7 +36,7 @@
       left: 0;
       width: 100%;
       height: 50%;
-      background-color: #03f7eb;
+      background-color: $main-color;
       transform: translateX(101%);
       transition: 0.2s ease-in-out;
       z-index: -1;
@@ -52,7 +51,7 @@
   &__link {
     width: 100%;
     height: 100%;
-    color: black;
+    color: #000;
     font-weight: bold;
     font-size: 14px;
     text-decoration: none;

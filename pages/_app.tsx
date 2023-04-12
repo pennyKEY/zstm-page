@@ -7,7 +7,7 @@ import Collapse from "@/components/collapse/Collapse";
 import "@/styles/global.scss";
 import "@/components/collapse/collapse.scss";
 import "@/components/menu/menu.scss";
-import "@/components/start/header.scss";
+import "@/components/pages/start/header.scss";
 import "@/components/dots/dots.scss";
 
 export default function App({ Component, pageProps }: AppProps) {

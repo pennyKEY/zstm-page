@@ -1,13 +1,20 @@
-@import "./animations.scss";
-@import "./burger.scss";
-@import "./modal.scss";
-@import "../menu/logo.scss";
+@import "../../styles/_variables.scss";
+@import "./_animations.scss";
+@import "./_burger.scss";
+@import "./_modal.scss";
+@import "../menu/_logo.scss";
 
 .collapse {
   position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flexContainer(
+    row,
+    no-wrap,
+    space-between,
+    center,
+    flex-start,
+    auto,
+    0
+  );
   width: 100vw;
   z-index: 100;
 }
@@ -55,21 +62,4 @@
   }
 }
 
-@media (min-width: 320px) {
-  .burger {
-    width: 9vw;
-  }
-}
-
-@media (min-width: 425px) {
-  .burger {
-    width: 35px;
-    margin-right: 2.3%;
-  }
-}
-
-@media (min-width: 1025px) {
-  .collapse {
-    display: none !important;
-  }
-}
+@import "./_mq.scss";

@@ -1,0 +1,37 @@
+$main-color: #2a9d8f;
+$second-color: #fff;
+
+@mixin flexContainer(
+  $direction: row,
+  $wrap: no-wrap,
+  $jc: flex-start,
+  $ai: flex-start,
+  $ac: flex-start,
+  $as: auto,
+  $gap: 0
+) {
+  display: flex;
+  flex-flow: $direction $wrap;
+  justify-content: $jc;
+  align-items: $ai;
+  align-content: $ac;
+  align-self: $as;
+  gap: $gap;
+}
+
+@mixin abs($top: "", $left: "", $bottom: "", $right: "") {
+  position: absolute;
+
+  @if $top != "" {
+    top: $top;
+  }
+  @if $left != "" {
+    left: $left;
+  }
+  @if $bottom != "" {
+    bottom: $bottom;
+  }
+  @if $right != "" {
+    right: $right;
+  }
+}

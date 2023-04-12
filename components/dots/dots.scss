@@ -1,16 +1,15 @@
+@import "../../styles/_variables.scss";
+
 .dots {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
+  @include flexContainer(row, wrap, flex-start, center, flex-start, auto, 2px);
   margin: 3% 1%;
-  gap: 2px;
   width: 4vh;
   height: 4vh;
 
   &__dot {
     width: 16%;
     height: 15%;
-    border: 1px solid black;
+    border: 1px solid #000;
     border-radius: 50%;
   }
 }
@@ -29,29 +28,17 @@
 
 @media (orientation: landscape) and (min-width: 520px) {
   .dots {
-    width: 5vh;
-    height: 5vh;
+    width: 4vh;
+    height: 4vh;
 
     &__dot {
-      width: 14%;
-      height: 14%;
+      width: 19%;
+      height: 19%;
     }
   }
 }
 
 @media (orientation: landscape) and (min-width: 1024px) {
-  .dots {
-    width: 5vh;
-    height: 5vh;
-
-    &__dot {
-      width: 20%;
-      height: 20%;
-    }
-  }
-}
-
-@media (orientation: landscape) and (min-width: 1630px) {
   .dots {
     width: 4vh;
     height: 4vh;

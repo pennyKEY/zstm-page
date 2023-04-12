@@ -1,13 +1,16 @@
 .burger {
   position: relative;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-  align-items: center;
-  align-content: space-between;
-  gap: 5px;
+  @include flexContainer(
+    row,
+    wrap,
+    flex-start,
+    center,
+    space-between,
+    auto,
+    5px
+  );
   width: 14vw;
-  margin-right: 5%;
+  margin-right: 10%;
   overflow: hidden;
   cursor: pointer;
 
@@ -19,14 +22,12 @@
     border-radius: 6px;
 
     &_fourth {
-      position: absolute;
-      top: 45%;
+      @include abs(45%);
       transform: rotate(45deg) translateX(-200%);
     }
 
     &_fifth {
-      position: absolute;
-      top: 35%;
+      @include abs(35%);
       transform: rotate(-45deg) translateX(200%);
       transition: 0.2s 0.4s ease-in-out;
     }

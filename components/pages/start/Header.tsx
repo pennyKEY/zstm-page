@@ -1,4 +1,4 @@
-import Dots from "../dots/Dots";
+import Dots from "../../dots/Dots";
 import headerImg from "@/public/header.jpg";
 
 export default function Header() {
@@ -13,13 +13,18 @@ export default function Header() {
         Mechatronicznych
         <Dots />
       </h1>
-      {/* <img className="header__img" src={headerImg.src} alt="" /> */}
       <div className="header__img">
         <div
           className="header__img_bg"
           style={{ backgroundImage: `url('${headerImg.src}')` }}
         ></div>
         <div className="header__img_cover"></div>
+      </div>
+      <div className="header__btn_group">
+        <button className="header__btn header__btn--outline">
+          Aktualności
+        </button>
+        <button className="header__btn">O szkole</button>
       </div>
     </header>
   );
