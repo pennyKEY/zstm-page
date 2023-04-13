@@ -20,6 +20,12 @@
       font-size: 26px;
     }
   }
+
+  .news {
+    &__title {
+      font-size: 22px;
+    }
+  }
 }
 
 @media (min-width: 425px) {
@@ -30,6 +36,15 @@
 
     &__title {
       font-size: 30px;
+    }
+  }
+
+  .news {
+    &__description {
+      font-size: 17px;
+    }
+    &__title {
+      font-size: 26px;
     }
   }
 }
@@ -72,6 +87,18 @@
     }
     &__title {
       width: 52%;
+    }
+  }
+
+  .news {
+    margin-top: 40vh;
+
+    &__title {
+      font-size: 33px;
+
+      &:hover::after {
+        width: 14%;
+      }
     }
   }
 }

@@ -1,5 +1,6 @@
 @import "../../../styles/_variables.scss";
 @import "./_animations.scss";
+@import "./_news.scss";
 
 .header {
   @include flexContainer($wrap: wrap, $jc: center, $ai: center);

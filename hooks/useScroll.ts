@@ -7,7 +7,6 @@ export default function useScroll() {
     window.addEventListener("scroll", () => {
       const scrollValue = window.scrollY;
 
-      console.log(scrollValue);
       if (!rectangleDivRef || !rectangleDivRef.current) return null;
 
       rectangleDivRef.current.style.transform = `rotate(${
