@@ -107,9 +107,13 @@ nav,
 section {
   display: block;
 }
+html,
+body {
+  overflow-x: hidden;
+}
 body {
   line-height: 1;
-  overflow-x: hidden;
+  position: relative;
 }
 ol,
 ul {

@@ -1,7 +1,10 @@
+import Posts from "./Posts";
+import { useEffect } from "react";
+
 import useAnimations from "@/hooks/useAnimations";
 
 export default function News() {
-  const { titleNewsRef, descriptionNewsRef } = useAnimations();
+  const { titleNewsRef, descriptionNewsRef, postsDivRef } = useAnimations();
 
   return (
     <section className="news">
@@ -12,6 +15,7 @@ export default function News() {
         Tutaj znajdziesz wszystkie ostatnie wydarzenia, które miały miejsce w
         naszej szkole. U nas nie ma czasu na nudę!
       </p>
+      <Posts postsDivRef={postsDivRef} />
     </section>
   );
 }

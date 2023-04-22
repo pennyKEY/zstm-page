@@ -3,6 +3,15 @@ import { useEffect, useRef, forwardRef } from "react";
 export default function useAnimations() {
   const titleNewsRef = useRef<HTMLHeadingElement>(null);
   const descriptionNewsRef = useRef<HTMLParagraphElement>(null);
+  const postsDivRef = useRef<HTMLDivElement>(null);
+
+  function scrollEvent() {
+    const scrollValue = window.scrollY;
+
+    animateScrollElement(scrollValue, titleNewsRef);
+    animateScrollElement(scrollValue, descriptionNewsRef);
+    animateScrollElement(scrollValue, postsDivRef);
+  }
 
   function animateScrollElement(scroll: number, element: any) {
     if (!element || !element.current) return null;
@@ -19,16 +28,14 @@ export default function useAnimations() {
   }
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      const scrollValue = window.scrollY;
+    window.addEventListener("scroll", scrollEvent);
 
-      animateScrollElement(scrollValue, titleNewsRef);
-      animateScrollElement(scrollValue, descriptionNewsRef);
-    });
-  });
+    return () => window.removeEventListener("scroll", scrollEvent);
+  }, [scrollEvent]);
 
   return {
     titleNewsRef,
     descriptionNewsRef,
+    postsDivRef,
   };
 }

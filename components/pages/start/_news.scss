@@ -5,7 +5,8 @@
   height: 100vh;
 
   &__description {
-    @include abs(7%, 15vw);
+    margin-top: 7%;
+    margin-left: 15vw;
     width: 70vw;
     opacity: 0;
     transition: 0.2s ease-in-out;
@@ -29,4 +30,48 @@
       transition: 0.2s ease-in-out;
     }
   }
+}
+
+.post {
+  margin: 0 10vw;
+  width: 80vw;
+
+  &__bcg {
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 25vh;
+
+    &::after {
+      content: "";
+      @include abs(0, 0);
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  &__title {
+    @include abs(80%, 5%);
+    color: #fff;
+    z-index: 2;
+  }
+}
+
+.posts {
+  @include flexContainer(
+    row,
+    nowrap,
+    space-between,
+    center,
+    flex-start,
+    auto,
+    0
+  );
+  width: 300vw;
+  margin-top: 7%;
+  opacity: 0;
+  transform: translateY(10vh);
+  transition: 0.2s ease-in-out;
 }
