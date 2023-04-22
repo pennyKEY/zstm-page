@@ -12,6 +12,12 @@ import "@/components/pages/start/header.scss";
 import "@/components/dots/dots.scss";
 import "@/components/shapes/shapes.scss";
 
+import "@fortawesome/fontawesome-svg-core/styles.css";
+
+import { config } from "@fortawesome/fontawesome-svg-core";
+
+config.autoAddCss = false;
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function App({ Component, pageProps }: AppProps) {

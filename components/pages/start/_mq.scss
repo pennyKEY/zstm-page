@@ -112,6 +112,11 @@
       width: 45%;
     }
   }
+  .news {
+    &__description {
+      margin-top: 2%;
+    }
+  }
 }
 
 @media (min-width: 1440px) {

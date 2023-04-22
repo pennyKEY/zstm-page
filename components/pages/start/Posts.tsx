@@ -1,16 +1,15 @@
-import { useState } from "react";
+import { ForwardedRef } from "react";
 
 import post1 from "../../../public/post1.jpg";
 import post2 from "../../../public/post2.jpg";
 import post3 from "../../../public/post3.jpg";
 
 interface Props {
-  postsDivRef: any;
+  postsDivRef: ForwardedRef<HTMLDivElement>;
+  activeIndexPost: number;
 }
 
-export default function Posts({ postsDivRef }: Props) {
-  const [activeIndexPost, setActiveIndexPost] = useState();
-
+export default function Posts({ postsDivRef, activeIndexPost }: Props) {
   const posts = [
     {
       title: "Intercity SA funduje stypendia",
@@ -26,8 +25,22 @@ export default function Posts({ postsDivRef }: Props) {
     },
   ];
 
+  function translateFunction() {
+    if (activeIndexPost === 0) {
+      return `translateX(0%)`;
+    } else if (activeIndexPost > 0) {
+      return `translateX(-${activeIndexPost * 33.33}%)`;
+    }
+  }
+
   return (
-    <div className="posts" ref={postsDivRef}>
+    <div
+      className="posts"
+      ref={postsDivRef}
+      style={{
+        transform: translateFunction(),
+      }}
+    >
       <article className="post">
         <div
           className="post__bcg"

@@ -1,10 +1,13 @@
 import Posts from "./Posts";
-import { useEffect } from "react";
+import Navigation from "./Navigation";
 
 import useAnimations from "@/hooks/useAnimations";
+import useNavigationPosts from "@/hooks/useNavigationPosts";
 
 export default function News() {
-  const { titleNewsRef, descriptionNewsRef, postsDivRef } = useAnimations();
+  const { titleNewsRef, descriptionNewsRef, postsDivRef, navigationRef } =
+    useAnimations();
+  const { changeActiveIndex, activeIndexPost } = useNavigationPosts();
 
   return (
     <section className="news">
@@ -15,7 +18,11 @@ export default function News() {
         Tutaj znajdziesz wszystkie ostatnie wydarzenia, które miały miejsce w
         naszej szkole. U nas nie ma czasu na nudę!
       </p>
-      <Posts postsDivRef={postsDivRef} />
+      <Posts postsDivRef={postsDivRef} activeIndexPost={activeIndexPost} />
+      <Navigation
+        changeActiveIndex={changeActiveIndex}
+        navigationRef={navigationRef}
+      />
     </section>
   );
 }

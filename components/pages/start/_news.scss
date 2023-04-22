@@ -10,6 +10,7 @@
     width: 70vw;
     opacity: 0;
     transition: 0.2s ease-in-out;
+    background-color: white;
   }
 
   &__title {
@@ -53,9 +54,10 @@
   }
 
   &__title {
-    @include abs(80%, 5%);
+    @include abs(85%, 5%);
     color: #fff;
     z-index: 2;
+    font-size: 13px;
   }
 }
 
@@ -74,4 +76,45 @@
   opacity: 0;
   transform: translateY(10vh);
   transition: 0.2s ease-in-out;
+}
+
+.navigation {
+  @include flexContainer(
+    row,
+    nowrap,
+    space-between,
+    center,
+    flex-start,
+    auto,
+    0
+  );
+  margin-top: 5%;
+  margin-left: 10vw;
+  width: 80vw;
+  opacity: 0;
+  transform: translateY(10vh);
+  transition: 0.2s ease-in-out;
+
+  &__link {
+    color: #000;
+    text-decoration: none;
+    font-size: 13px;
+  }
+
+  &__arrow {
+    margin: 0 0.5%;
+  }
+
+  &__arrows {
+    @include flexContainer(
+      row,
+      nowrap,
+      space-between,
+      center,
+      flex-start,
+      auto,
+      2vw
+    );
+    cursor: pointer;
+  }
 }

@@ -4,6 +4,7 @@ export default function useAnimations() {
   const titleNewsRef = useRef<HTMLHeadingElement>(null);
   const descriptionNewsRef = useRef<HTMLParagraphElement>(null);
   const postsDivRef = useRef<HTMLDivElement>(null);
+  const navigationRef = useRef<HTMLMenuElement>(null);
 
   function scrollEvent() {
     const scrollValue = window.scrollY;
@@ -11,6 +12,7 @@ export default function useAnimations() {
     animateScrollElement(scrollValue, titleNewsRef);
     animateScrollElement(scrollValue, descriptionNewsRef);
     animateScrollElement(scrollValue, postsDivRef);
+    animateScrollElement(scrollValue, navigationRef);
   }
 
   function animateScrollElement(scroll: number, element: any) {
@@ -37,5 +39,6 @@ export default function useAnimations() {
     titleNewsRef,
     descriptionNewsRef,
     postsDivRef,
+    navigationRef,
   };
 }
