@@ -101,6 +101,20 @@
       }
     }
   }
+
+  .posts {
+    &__wrapper {
+      width: 200%;
+    }
+  }
+
+  .post {
+    width: 31%;
+
+    &__bcg {
+      height: 40vh;
+    }
+  }
 }
 
 @media (min-width: 1200px) {
