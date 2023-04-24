@@ -26,6 +26,12 @@
       font-size: 22px;
     }
   }
+
+  .navigation {
+    &__link {
+      font-size: 13px;
+    }
+  }
 }
 
 @media (min-width: 425px) {
@@ -56,6 +62,12 @@
     }
     &__img {
       height: 40vh;
+    }
+  }
+
+  .navigation {
+    &__link {
+      padding: 2%;
     }
   }
 }
@@ -97,7 +109,7 @@
       font-size: 33px;
 
       &:hover::after {
-        width: 14%;
+        width: 100%;
       }
     }
   }
@@ -113,6 +125,18 @@
 
     &__bcg {
       height: 40vh;
+    }
+
+    &__down {
+      height: 28vh;
+    }
+  }
+
+  .navigation {
+    margin-top: 5%;
+
+    &__link {
+      padding: 1%;
     }
   }
 }

@@ -1,0 +1,37 @@
+.news {
+  position: relative;
+  margin-top: 10vh;
+  width: 100vw;
+  height: 100vh;
+
+  &__description {
+    margin-top: 7%;
+    margin-left: 15vw;
+    width: 70vw;
+    opacity: 0;
+    transition: 0.2s ease-in-out;
+    background-color: white;
+  }
+
+  &__title {
+    position: relative;
+    width: fit-content;
+    margin-top: 5%;
+    margin-left: 15vw;
+    font-size: 18px;
+    font-weight: 500;
+    opacity: 0;
+    transition: 0.2s ease-in-out;
+    transform: translateY(10vh);
+
+    &::after {
+      content: "";
+      @include abs(-30%, -5%);
+      width: 15%;
+      height: 160%;
+      padding: 0 5%;
+      background-color: rgba(0, 0, 0, 0.3);
+      transition: 0.2s ease-in-out;
+    }
+  }
+}

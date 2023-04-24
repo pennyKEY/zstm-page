@@ -6,11 +6,6 @@ import Menu from "@/components/menu/Menu";
 import Collapse from "@/components/collapse/Collapse";
 
 import "@/styles/global.scss";
-import "@/components/collapse/collapse.scss";
-import "@/components/menu/menu.scss";
-import "@/components/pages/start/header.scss";
-import "@/components/dots/dots.scss";
-import "@/components/shapes/shapes.scss";
 
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
