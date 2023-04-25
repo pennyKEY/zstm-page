@@ -1,7 +1,10 @@
+// imported libraries
 import Link from "next/link";
 
+// imported Component
 import Logo from "./Logo";
 
+// create Component
 export default function Menu() {
   return (
     <nav className="menu">

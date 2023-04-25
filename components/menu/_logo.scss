@@ -1,13 +1,20 @@
+// .logo
 .logo {
+  // .logo__img
   &__img {
+    // size
     margin: 2%;
     width: 30%;
   }
 }
 
+// media min-width 1440px
 @media (min-width: 1440px) {
+  // .logo
   .logo {
+    // .logo__img
     &__img {
+      // size
       width: 35%;
     }
   }

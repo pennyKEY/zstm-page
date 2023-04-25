@@ -1,10 +1,13 @@
+// imported other styles
 @import "../../styles/_variables.scss";
 @import "./_animations.scss";
 @import "./_burger.scss";
 @import "./_modal.scss";
 @import "../menu/_logo.scss";
 
+// .collapse
 .collapse {
+  // position
   position: relative;
   @include flexContainer(
     row,
@@ -15,51 +18,74 @@
     auto,
     0
   );
-  width: 100vw;
   z-index: 100;
+
+  // size
+  width: 100vw;
 }
 
+// .active
 .active {
+  // .active + .modal
   & + .modal {
+    // animation
     transform: translateX(0);
   }
 
+  // .active .burger__bar
   & .burger__bar {
+    // animation
     animation: moveBurgerBar 0.2s ease-in-out forwards;
   }
 
+  // .active .burger__bar_first, .active .burger__bar_third
   & .burger__bar_first,
   & .burger__bar_third {
+    // animation
     animation-delay: 0.2s;
   }
 
+  // .active .burger__bar_fourth
   & .burger__bar_fourth {
+    // animation
     animation: showCloseBar1 0.2s 0.4s ease-in-out forwards;
   }
 
+  // .active .burger__bar_fifth
   & .burger__bar_fifth {
+    // animation
     animation: showCloseBar2 0.2s 0.4s ease-in-out forwards;
   }
 }
 
+// .disactive
 .disactive {
+  // .disactive .burger__bar
   & .burger__bar {
+    // animation
     transform: translateX(100%);
     animation: moveBurgerBarReturn 0.2s 0.2s ease-in-out forwards;
   }
 
+  // .disactive .burger__bar_first, .disactive .burger__bar_third
   & .burger__bar_first,
   & .burger__bar_third {
+    // animation
     animation-delay: 0.4s;
   }
 
+  // .disactive .burger__bar_fourth
   & .burger__bar_fourth {
+    // animation
     animation: showCloseBarReturn1 0.2s ease-in-out forwards;
   }
 
+  // .disactive .burger__bar_fifth
   & .burger__bar_fifth {
+    // animation
     animation: showCloseBarReturn2 0.2s ease-in-out forwards;
   }
 }
 
+// import media queries
 @import "./_mq.scss";

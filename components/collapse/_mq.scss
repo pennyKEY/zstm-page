@@ -1,18 +1,27 @@
+// media min-width 320px
 @media (min-width: 320px) {
+  // .burger
   .burger {
+    // size
     width: 9vw;
   }
 }
 
+// media min-width 425px
 @media (min-width: 425px) {
+  // .burger
   .burger {
+    // size
     width: 35px;
     margin-right: 2.3%;
   }
 }
 
+// media min-width 1025px
 @media (min-width: 1025px) {
+  // .collapse (hide collapse menu)
   .collapse {
+    // position
     display: none !important;
   }
 }

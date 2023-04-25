@@ -1,48 +1,85 @@
+// .post
 .post {
+  // size
   margin: 0 1%;
   width: 100%;
 
+  // .post__bcg
   &__bcg {
+    // position
     position: relative;
+
+    // size
+    height: 30vh;
+    width: 100%;
+
+    // background
     background-position: center;
     background-size: cover;
-    width: 100%;
-    height: 30vh;
 
+    // .post__bcg::after
     &::after {
-      content: "";
+      // position
       @include abs(0, 0);
+
+      // size
+      content: "";
       width: 100%;
       height: 100%;
+
+      // background
       background-color: rgba(0, 0, 0, 0.5);
     }
   }
 
+  // .post__btn
   &__btn {
-    margin-top: 7%;
+    // position
     position: relative;
-    flex-basis: 39%;
-    padding: 2% 0;
-    background-color: transparent;
+
+    // size
     border: none;
-    cursor: pointer;
+    flex-basis: 39%;
+    margin-top: 7%;
+    padding: 2% 0;
+
+    // background
+    background-color: transparent;
+
+    // font
     font-size: 11px;
 
+    // other
+    cursor: pointer;
+
+    // .post__btn::after
     &::after {
-      content: "";
+      // position
       @include abs(0, 0);
+
+      // size
+      content: "";
       width: 25%;
       height: 100%;
+
+      // background
       background-color: rgba(0, 0, 0, 0.2);
+
+      // animation
       transition: width 0.2s ease-in-out;
     }
 
+    // .post__btn:hover::after
     &:hover::after {
+      // size
       width: 100%;
     }
   }
 
+  // .post__down
   &__down {
+    // position
+    position: relative;
     @include flexContainer(
       row,
       wrap,
@@ -52,36 +89,64 @@
       auto,
       0
     );
-    position: relative;
-    width: 100%;
+
+    // size
     height: 20vh;
+    width: 100%;
     padding: 4% 4%;
   }
 
+  // .post__link
+  &__link {
+    // font
+    color: black;
+    text-decoration: none;
+  }
+
+  // .post__title
   &__title {
+    // size
     width: 92%;
+
+    // font
     font-size: 14px;
   }
 }
 
+// .posts
 .posts {
+  // position
   position: relative;
+
+  // size
   margin-top: 10%;
   width: 100vw;
   min-height: 40vh;
-  opacity: 0;
+
+  // animation
   transform: translateY(10vh);
   transition: 0.2s ease-in-out;
-  overflow: hidden;
 
+  // other
+  overflow: hidden;
+  opacity: 0;
+
+  // .posts__container
   &__container {
+    // position
     @include abs(0, 10vw);
+
+    // size
     width: 80%;
     height: 100%;
+
+    // other
     overflow: hidden;
   }
 
+  // .posts__wrapper
   &__wrapper {
+    // position
     @include flexContainer(
       row,
       nowrap,
@@ -91,8 +156,12 @@
       auto,
       0
     );
+
+    // size
     width: 600%;
     height: 100%;
+
+    // animation
     transition: 0.2s ease-in-out;
   }
 }

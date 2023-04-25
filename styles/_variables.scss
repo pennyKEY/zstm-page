@@ -1,6 +1,8 @@
+// variables
 $main-color: #2a9d8f;
 $second-color: #fff;
 
+// mixin with flexbox
 @mixin flexContainer(
   $direction: row,
   $wrap: no-wrap,
@@ -10,6 +12,7 @@ $second-color: #fff;
   $as: auto,
   $gap: 0
 ) {
+  // size
   display: flex;
   flex-flow: $direction $wrap;
   justify-content: $jc;
@@ -19,7 +22,9 @@ $second-color: #fff;
   gap: $gap;
 }
 
+// mixin with position absolute with default parameters
 @mixin abs($top: "", $left: "", $bottom: "", $right: "") {
+  // size
   position: absolute;
 
   @if $top != "" {

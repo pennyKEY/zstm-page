@@ -1,17 +1,25 @@
+// imported libraries
 import { ForwardedRef } from "react";
 
+// imported components
 import MapPost from "./MapPost";
 
+// imported assets
 import post1 from "../../public/post1.jpg";
 import post2 from "../../public/post2.jpg";
 import post3 from "../../public/post3.jpg";
 
+// define props
 interface Props {
+  // useRef with HTMLDivElement
   postsDivRef: ForwardedRef<HTMLDivElement>;
+  // activeIndexPost with type number
   activeIndexPost: number;
 }
 
+// create component
 export default function Posts({ postsDivRef, activeIndexPost }: Props) {
+  // for begin random posts for create sass views
   const posts = [
     {
       title: "Intercity SA funduje stypendia",
@@ -39,23 +47,34 @@ export default function Posts({ postsDivRef, activeIndexPost }: Props) {
     },
   ];
 
+  // count posts length
+  const numberPosts = posts.length;
+
+  // function which must return translateX value
   function translateFunction() {
+    // return if activeIndexPost is equal 0
     if (activeIndexPost === 0) {
       return `translateX(0%)`;
-    } else if (activeIndexPost > 0) {
-      return `translateX(-${activeIndexPost * (100 / 6)}%)`;
+    }
+    // return if activeIndexPost is greater than 0
+    else if (activeIndexPost > 0) {
+      return `translateX(-${activeIndexPost * (100 / numberPosts)}%)`;
     }
   }
 
+  // return component
   return (
+    // create .posts div with ref to component, to animation
     <div className="posts" ref={postsDivRef}>
       <div className="posts__container">
+        {/* create .posts__wrapper div to translateX slider post */}
         <div
           className="posts__wrapper"
           style={{
             transform: translateFunction(),
           }}
         >
+          {/* show all posts to slider */}
           <MapPost posts={posts} />
         </div>
       </div>

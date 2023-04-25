@@ -1,23 +1,36 @@
+// imported other styles
 @import "../../styles/_variables.scss";
 @import "./_animations.scss";
 
+// variables
 $size-rectangle: calc((37vh + 37vw) / 2);
 $top-rectangle: calc((120vw + 120vh) / 2);
 
+// .rectangle
 .rectangle {
+  // position
   @include abs($top-rectangle, 26vw);
-  width: $size-rectangle;
-  height: $size-rectangle;
-  transform: rotate(45deg);
-  border: 2px solid #00000030;
   z-index: -1;
-  opacity: 0;
+
+  // size
+  border: 2px solid #00000030;
+  height: $size-rectangle;
+  width: $size-rectangle;
+
+  // animation
+  transform: rotate(45deg);
   transition: 0.2s linear;
   animation: showRectangle 0.5s 0.9s ease-in-out forwards;
+
+  // other
+  opacity: 0;
 }
 
+// media queries orientation landscape
 @media (orientation: landscape) {
+  // .rectangle
   .rectangle {
+    // position
     @include abs(85vh, 40%);
   }
 }

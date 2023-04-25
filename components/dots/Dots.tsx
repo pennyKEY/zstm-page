@@ -1,4 +1,6 @@
+// create Component
 export default function Dots() {
+  // return Component
   return (
     <div className="dots">
       <div className="dots__dot dots__dot--first"></div>

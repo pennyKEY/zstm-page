@@ -1,19 +1,29 @@
+// show animation
 @keyframes show {
   from {
-    opacity: 0;
+    // animation
     transform: translateY(30%);
+
+    // other
+    opacity: 0;
   }
   to {
-    opacity: 1;
+    // animation
     transform: none;
+
+    // other
+    opacity: 1;
   }
 }
 
+// show button animation
 @keyframes showBtn {
   from {
+    // other
     opacity: 0;
   }
   to {
+    // other
     opacity: 1;
   }
 }

@@ -1,31 +1,25 @@
+// imported components
+import Post from "./Post";
+
+// define Post structure to Props
 interface Post {
   title: string;
   img: string;
 }
 
+// define Props
 interface Props {
   posts: Post[];
 }
 
+// create Component
 export default function MapPost({ posts }: Props) {
-  const maxLengthTitle = 45;
-
+  // return component
   return (
     <>
+      {/* map all posts and show post structure  */}
       {posts.map(({ img, title }) => (
-        <article className="post">
-          <div
-            className="post__bcg"
-            style={{ backgroundImage: `url('${img}')` }}
-          ></div>
-          <div className="post__down">
-            <h6 className="post__title">
-              {title.slice(0, maxLengthTitle)}
-              {title.length > maxLengthTitle ? "..." : ""}
-            </h6>
-            <button className="post__btn btn">Zobacz post!</button>
-          </div>
-        </article>
+        <Post title={title} img={img} />
       ))}
     </>
   );

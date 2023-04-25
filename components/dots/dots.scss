@@ -1,12 +1,19 @@
+// imported other styles
 @import "../../styles/_variables.scss";
 
+// .dots
 .dots {
+  // position
   @include flexContainer(row, wrap, flex-start, center, flex-start, auto, 2px);
+
+  // size
   margin: 3% 1%;
   width: 4vh;
   height: 4vh;
 
+  // .dots__dot
   &__dot {
+    // size
     width: 16%;
     height: 15%;
     border: 1px solid #000;
@@ -14,63 +21,89 @@
   }
 }
 
+// media orientation landscape and min-width 320px
 @media (orientation: landscape) and (min-width: 320px) {
+  // .dots
   .dots {
+    // size
     width: 5vh;
     height: 5vh;
 
+    // .dots__dot
     &__dot {
+      // size
       width: 16%;
       height: 16%;
     }
   }
 }
 
+// media orientation landscape and min-width 520px
 @media (orientation: landscape) and (min-width: 520px) {
+  // .dots
   .dots {
+    // size
     width: 4vh;
     height: 4vh;
 
+    // .dots__dot
     &__dot {
+      // size
       width: 19%;
       height: 19%;
     }
   }
 }
 
+// media orientation landscape and min-width 1024px
 @media (orientation: landscape) and (min-width: 1024px) {
+  // .dots
   .dots {
+    // size
     width: 4vh;
     height: 4vh;
 
+    // .dots__dot
     &__dot {
+      // size
       width: 20%;
       height: 20%;
     }
   }
 }
 
+// media orientation portrait
 @media (orientation: portrait) {
+  // .dots
   .dots {
+    // size
     width: 7vw;
     height: 7vw;
   }
 }
 
+// media orientation portrait and min-width 540px
 @media (orientation: portrait) and (min-width: 540px) {
+  // .dots
   .dots {
+    // size
     width: 6vw;
     height: 6vw;
 
+    // .dots__dot
     &__dot {
+      // size
       width: 18%;
       height: 18%;
     }
   }
 }
 
+// media orientation portrait and min-width 740px
 @media (orientation: portrait) and (min-width: 740px) {
+  // .dots
   .dots {
+    // size
     width: 5vw;
     height: 5vw;
   }

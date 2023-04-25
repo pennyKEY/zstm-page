@@ -1,8 +1,11 @@
+// create animation to show rectangle on scroll
 @keyframes showRectangle {
   from {
+    // animation
     opacity: 0;
   }
   to {
+    // animation
     opacity: 1;
   }
 }
