@@ -9,8 +9,7 @@ import useNavigationPosts from "@/hooks/useNavigationPosts";
 // create component
 export default function News() {
   // useAnimations hook
-  const { titleNewsRef, descriptionNewsRef, postsDivRef, navigationRef } =
-    useAnimations();
+  const { titleNewsRef, descriptionNewsRef, postsDivRef } = useAnimations();
 
   // useNavigationPosts hook
   const { changeActiveIndex, activeIndexPost } = useNavigationPosts();
@@ -33,10 +32,7 @@ export default function News() {
       <Posts postsDivRef={postsDivRef} activeIndexPost={activeIndexPost} />
 
       {/* show Navigation with function changeActiveIndex and navigationRef to animation */}
-      <Navigation
-        changeActiveIndex={changeActiveIndex}
-        navigationRef={navigationRef}
-      />
+      <Navigation changeActiveIndex={changeActiveIndex} />
     </section>
   );
 }

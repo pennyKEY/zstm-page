@@ -16,11 +16,7 @@
   width: 80vw;
 
   // animation
-  transform: translateY(10vh);
   transition: 0.2s ease-in-out;
-
-  // other
-  opacity: 0;
 
   // .navigation__arrow
   &__arrow {

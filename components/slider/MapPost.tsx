@@ -19,7 +19,7 @@ export default function MapPost({ posts }: Props) {
     <>
       {/* map all posts and show post structure  */}
       {posts.map(({ img, title }) => (
-        <Post title={title} img={img} />
+        <Post title={title} img={img} key={title} />
       ))}
     </>
   );

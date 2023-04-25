@@ -7,18 +7,14 @@ import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 // define Props
 interface Props {
   changeActiveIndex: (grow: boolean) => void;
-  navigationRef: ForwardedRef<HTMLMenuElement>;
 }
 
 // create Component
-export default function Navigation({
-  changeActiveIndex,
-  navigationRef,
-}: Props) {
+export default function Navigation({ changeActiveIndex }: Props) {
   // return component
   return (
     // create nav.navigation with navigationRef to animation
-    <nav className="navigation" ref={navigationRef}>
+    <nav className="navigation">
       <div className="navigation__arrows">
         {/* FontAwesomeIcon with onClickFunction to decrement index post */}
         <FontAwesomeIcon
