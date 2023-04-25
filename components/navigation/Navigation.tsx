@@ -35,7 +35,7 @@ export default function Navigation({
       </div>
 
       {/* Link to see all posts */}
-      <Link href="/aktualnosci" className="navigation__link">
+      <Link href="/aktualnosci" className="link">
         Zobacz wszystkie posty!
       </Link>
     </nav>

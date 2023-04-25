@@ -5,7 +5,7 @@
 
   // size
   margin-top: 10vh;
-  height: 100vh;
+  height: 80vh;
   width: 100vw;
 
   // .news__description
@@ -36,7 +36,7 @@
     width: fit-content;
 
     // font
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 500;
 
     // animation
@@ -63,5 +63,11 @@
       // animation
       transition: 0.2s ease-in-out;
     }
+  }
+}
+
+@media (min-width: 1024px) {
+  .news {
+    height: 110vh;
   }
 }

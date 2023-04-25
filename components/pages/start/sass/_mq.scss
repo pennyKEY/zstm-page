@@ -20,6 +20,22 @@
       font-size: 22.5px;
     }
   }
+
+  // .title
+  .title {
+    // font
+    font-size: 21px;
+  }
+
+  // .school, .patron
+  .school,
+  .patron {
+    // .school__description, .patron__description
+    &__description {
+      // font
+      font-size: 15px;
+    }
+  }
 }
 
 // media min-width 375px
@@ -42,13 +58,10 @@
     }
   }
 
-  // .navigation
-  .navigation {
-    // .navigation__link
-    &__link {
-      // font
-      font-size: 13px;
-    }
+  // .link
+  .link {
+    // font
+    font-size: 13px;
   }
 }
 
@@ -85,6 +98,15 @@
   }
 }
 
+// media min-width 630px
+@media (min-width: 630px) {
+  // .title
+  .title {
+    // size
+    margin-bottom: 7%;
+  }
+}
+
 // media min-width 668px
 @media (min-width: 668px) {
   // .header
@@ -102,13 +124,10 @@
     }
   }
 
-  // .navigation
-  .navigation {
-    // .navigation__link
-    &__link {
-      // size
-      padding: 2%;
-    }
+  // .link
+  .link {
+    // size
+    padding: 2%;
   }
 }
 
@@ -208,16 +227,56 @@
     }
   }
 
+  // .title
+  .title {
+    // size
+    margin-bottom: 14%;
+
+    // font
+    font-size: 24px;
+  }
+
+  // .school, .patron
+  .school,
+  .patron {
+    // size
+    flex-basis: 31%;
+    margin-right: 4%;
+
+    // .school__description, .patron__description
+    &__description {
+      // font
+      font-size: 15px;
+    }
+
+    // .school__link, .patron__link
+    &__link {
+      // size
+      padding: 2.5% !important;
+    }
+  }
+
+  // .information
+  .information {
+    // size
+    margin-top: -5%;
+
+    // .information__img
+    &__img {
+      // size
+      flex-basis: 30%;
+    }
+  }
+
   // .navigation
   .navigation {
     // size
     margin-top: 5%;
+  }
 
-    // .navigation__link
-    &__link {
-      // size
-      padding: 1%;
-    }
+  .link {
+    // size
+    padding: 1%;
   }
 }
 
@@ -274,6 +333,33 @@
 
       // font
       font-size: 54px;
+    }
+  }
+}
+
+@media (min-height: 1024px) {
+  .post {
+    &__bcg {
+      height: 30vh;
+    }
+
+    &__title {
+      margin-bottom: 3%;
+      font-size: 15px;
+    }
+  }
+
+  .information {
+    &__img {
+      height: 30vh;
+    }
+  }
+}
+
+@media (min-height: 1200px) {
+  .post {
+    &__btn {
+      padding: 4% 0;
     }
   }
 }

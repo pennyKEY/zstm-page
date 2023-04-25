@@ -8,6 +8,9 @@ export default function useAnimations() {
   const descriptionNewsRef = useRef<HTMLParagraphElement>(null);
   const postsDivRef = useRef<HTMLDivElement>(null);
   const navigationRef = useRef<HTMLMenuElement>(null);
+  const schoolRef = useRef<HTMLDivElement>(null);
+  const patronRef = useRef<HTMLDivElement>(null);
+  const patronImgRef = useRef<HTMLDivElement>(null);
 
   // function on scroll
   function scrollEvent() {
@@ -19,6 +22,9 @@ export default function useAnimations() {
     animateScrollElement(scrollValue, descriptionNewsRef);
     animateScrollElement(scrollValue, postsDivRef);
     animateScrollElement(scrollValue, navigationRef);
+    animateScrollElement(scrollValue, schoolRef);
+    animateScrollElement(scrollValue, patronRef);
+    animateScrollElement(scrollValue, patronImgRef);
   }
 
   // function to animate single element
@@ -28,9 +34,10 @@ export default function useAnimations() {
 
     // get offsetTop animated element
     const offsetTop = element.current.getBoundingClientRect().top;
+    const offsetHeight = element.current.offsetHeight;
 
     // check why can display animated element
-    if (scroll > offsetTop) {
+    if (scroll > offsetTop + offsetHeight) {
       element.current.style.transform = "none";
       element.current.style.opacity = "1";
     } else {
@@ -54,5 +61,8 @@ export default function useAnimations() {
     descriptionNewsRef,
     postsDivRef,
     navigationRef,
+    patronRef,
+    schoolRef,
+    patronImgRef,
   };
 }

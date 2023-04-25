@@ -6,6 +6,7 @@ import Head from "next/head";
 // imported Components
 import Header from "@/components/pages/start/Header";
 import News from "@/components/pages/start/News";
+import Information from "@/components/pages/start/Information";
 
 // create Page
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       {/* show Components to this page */}
       <Header />
       <News />
+      <Information />
     </>
   );
 }
