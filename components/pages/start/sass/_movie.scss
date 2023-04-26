@@ -1,0 +1,121 @@
+.movie {
+  // position
+  @include flexContainer(row, wrap, center, center, flex-start, auto, 0);
+
+  // size
+  margin-bottom: 10vh;
+
+  &__container {
+    // position
+    position: relative;
+
+    // size
+    width: 70vw;
+  }
+
+  // controls
+  &__controls {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 5vh;
+    opacity: 0;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__cover {
+    // position
+    @include abs(0, 0);
+
+    // size
+    width: 100%;
+    height: 100%;
+
+    // background
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  &__expand {
+    // position
+    @include abs(50%, "", "", 3%);
+
+    // font
+    color: white;
+
+    // animation
+    transform: translateY(-50%);
+
+    // other
+    cursor: pointer;
+  }
+
+  &__play {
+    // position
+    @include abs(50%, 50%);
+
+    // size
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 2%;
+
+    // font
+    color: white;
+
+    // animation
+    transform: translate(-50%, -50%);
+
+    // other
+    cursor: pointer;
+  }
+
+  &__pause {
+    // position
+    @include abs(50%, 3%);
+
+    // font
+    color: white;
+
+    // animation
+    transform: translateY(-50%);
+
+    // other
+    cursor: pointer;
+  }
+
+  &__progress {
+    @include abs(0, 0);
+
+    width: 100%;
+    height: 3px;
+
+    background-color: #ccc;
+  }
+
+  &__time {
+    // position
+    @include abs(50%, 6%);
+
+    // font
+    color: white;
+    font-size: 13px;
+
+    // animation
+    transform: translateY(-50%);
+  }
+
+  &__title {
+    flex-basis: 100%;
+  }
+
+  &__video {
+    width: 100%;
+
+    &:hover + .movie__controls {
+      opacity: 1;
+    }
+  }
+}
