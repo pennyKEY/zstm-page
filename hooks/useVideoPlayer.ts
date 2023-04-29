@@ -4,30 +4,49 @@ import { useEffect, useState, useRef } from "react";
 // create own hook
 export default function useVideoPlayer() {
   // useState
-  const [isPlay, setIsPlay] = useState(false);
-  const [isFullScreen, setIsFullScreen] = useState(false);
-  const [durationMovie, setDurationMovie] = useState(0);
-  const [actualTimeMovie, setActualTimeMovie] = useState(0);
+  const [isPlay, setIsPlay] = useState<boolean>(false);
+  const [isFullScreen, setIsFullScreen] = useState<boolean>(false);
+  const [muteVideo, setMuteVideo] = useState<boolean>(false);
+  const [durationMovie, setDurationMovie] = useState<number>(0);
+  const [actualTimeMovie, setActualTimeMovie] = useState<number>(0);
+  const [windowWidth, setWindowWidth] = useState<number>(0);
+  const [progress, setProgress] = useState<number>(0);
 
   // useRef
   const videoRef = useRef<HTMLVideoElement>(null);
+  const progressRef = useRef<HTMLInputElement>(null);
+  const containerMovie = useRef<HTMLDivElement>(null);
+
+  // interval
+  let interval: any;
 
   // change actual time
   function changeActualTimeMovie() {
     // check why videoRef exist
     if (!videoRef || !videoRef.current) return;
+    if (!progressRef || !progressRef.current) return;
 
-    if (
-      Math.floor(videoRef.current.currentTime) >=
-      Math.floor(videoRef.current.duration)
-    ) {
+    // check why video is ended
+    if (videoRef.current.currentTime >= videoRef.current.duration) {
+      // reset values
       setIsPlay(false);
       setActualTimeMovie(0);
+      setProgress(0);
 
+      // ended function
       return;
     }
 
-    setActualTimeMovie(Math.round(videoRef.current.currentTime));
+    // get actual values
+    const actualTime = videoRef.current.currentTime;
+    const actualProgress = (actualTime / durationMovie) * 100;
+
+    // change progress bar value
+    progressRef.current.value = actualProgress.toString();
+
+    // and set new values to states
+    setActualTimeMovie(actualTime);
+    setProgress(actualProgress);
   }
 
   // play video or pause
@@ -41,45 +60,87 @@ export default function useVideoPlayer() {
     // play or pause video
     isPlay ? videoRef.current.pause() : videoRef.current.play();
 
-    let interval;
-
+    // check why video is pause
     if (!isPlay) {
       interval = setInterval(changeActualTimeMovie, 1000);
-    } else {
+    }
+    // check why video is play
+    else {
       clearInterval(interval);
     }
   }
 
   // change full screen
   function clickHandlerFullScreen() {
-    // check why videoRef exist
-    if (!videoRef || !videoRef.current) return;
+    // check why full screen is open or close
+    isFullScreen
+      ? document.exitFullscreen()
+      : containerMovie.current?.requestFullscreen();
 
-    !isFullScreen && videoRef.current.requestFullscreen();
-
+    // change value isFullScreen
     setIsFullScreen(!isFullScreen);
   }
 
-  // function key handler
-  function keyHandler(e: any) {
-    if (e.keyCode === 32) playOrPause();
+  // change volume video
+  function changeMuteVideo() {
+    // check why videoRef exist
+    if (!videoRef || !videoRef.current) return;
+
+    // change mute video property
+    videoRef.current.muted = !muteVideo;
+
+    // change state muteVideo
+    setMuteVideo(!muteVideo);
+  }
+
+  // change progress bar
+  function changeProgressHandler() {
+    // check why progressRef exist
+    if (!progressRef || !progressRef.current) return;
+    if (!videoRef || !videoRef.current) return;
+
+    // get new values
+    const val: number = parseFloat(progressRef.current.value);
+    const newActualTime = (val / 100) * durationMovie;
+
+    // set new values
+    setActualTimeMovie(newActualTime);
+    setProgress(val);
+
+    // change actual time video
+    videoRef.current.currentTime = newActualTime;
+  }
+
+  // mouseDown handler on progress bar
+  function mouseDownProgressHandler(e: React.MouseEvent<Element, MouseEvent>) {
+    // clear interval
+    clearInterval(interval);
+
+    // pause video
+    videoRef.current?.pause();
+  }
+
+  // mouseUp handler on progress bar
+  function mouseUpProgressHandler(e: React.MouseEvent<Element, MouseEvent>) {
+    // set interval again
+    interval = setInterval(changeActualTimeMovie, 1000);
+
+    // play video
+    videoRef.current?.play();
   }
 
   // mount
   useEffect(() => {
-    // get listener on keydown
-    window.addEventListener("keydown", keyHandler);
+    // set window width on mount
+    setWindowWidth(window.innerWidth);
 
+    // check why videoRef exist
     if (!videoRef || !videoRef.current) return;
 
     // get time all movie
     const time = Math.floor(videoRef.current.duration);
+    // set time
     setDurationMovie(time);
-
-    // unmount
-    return () => {
-      window.removeEventListener("keydown", keyHandler);
-    };
   }, []);
 
   // return values
@@ -90,5 +151,14 @@ export default function useVideoPlayer() {
     clickHandlerFullScreen,
     durationMovie,
     actualTimeMovie,
+    muteVideo,
+    changeMuteVideo,
+    windowWidth,
+    changeProgressHandler,
+    progressRef,
+    progress,
+    mouseDownProgressHandler,
+    containerMovie,
+    mouseUpProgressHandler,
   };
 }

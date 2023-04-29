@@ -5,28 +5,39 @@
   // size
   margin-bottom: 10vh;
 
+  // .movie__container
   &__container {
     // position
     position: relative;
+    display: flex;
 
     // size
-    width: 70vw;
+    width: 100vw;
   }
 
-  // controls
+  // .movie__controls
   &__controls {
-    position: absolute;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    width: 100%;
-    height: 5vh;
-    opacity: 0;
+    // position
+    @include abs("", "", 0, "");
 
+    // size
+    height: 7vh;
+    width: 100%;
+
+    // background
+    background-color: rgba(0, 0, 0, 0.6);
+
+    // other
+    display: none;
+
+    // .movie__controls:hover
     &:hover {
-      opacity: 1;
+      // other
+      display: block;
     }
   }
 
+  // .movie__cover
   &__cover {
     // position
     @include abs(0, 0);
@@ -39,6 +50,7 @@
     background-color: rgba(0, 0, 0, 0.6);
   }
 
+  // .movie__expand
   &__expand {
     // position
     @include abs(50%, "", "", 3%);
@@ -53,6 +65,7 @@
     cursor: pointer;
   }
 
+  // .movie__play
   &__play {
     // position
     @include abs(50%, 50%);
@@ -60,10 +73,11 @@
     // size
     border: 1px solid white;
     border-radius: 50%;
-    padding: 2%;
+    padding: 4%;
 
     // font
     color: white;
+    font-size: 24px;
 
     // animation
     transform: translate(-50%, -50%);
@@ -72,7 +86,55 @@
     cursor: pointer;
   }
 
+  // .movie__pause
   &__pause {
+    // position
+    @include abs(50%, 50%);
+
+    // font
+    color: white;
+    font-size: 19px;
+
+    // animation
+    transform: translate(-50%, -50%);
+
+    // other
+    cursor: pointer;
+  }
+
+  // .movie__progress
+  &__progress {
+    // position
+    @include abs(0, 0);
+    position: relative;
+
+    // size
+    width: 100%;
+    height: 5px;
+
+    // background
+    background-color: #ccc;
+
+    // .movie__progress_bar
+    &_bar {
+      // position
+      @include abs(-2px, -3px);
+
+      // size
+      width: 100%;
+      height: 100%;
+
+      // animation
+      transition: 0.1s ease-in-out;
+
+      // other
+      cursor: grab;
+    }
+  }
+
+  // .movie__volume, .movie__volume_xmark
+  &__volume,
+  &__volume_xmark {
     // position
     @include abs(50%, 3%);
 
@@ -86,18 +148,10 @@
     cursor: pointer;
   }
 
-  &__progress {
-    @include abs(0, 0);
-
-    width: 100%;
-    height: 3px;
-
-    background-color: #ccc;
-  }
-
+  // .movie__time
   &__time {
     // position
-    @include abs(50%, 6%);
+    @include abs(50%, 13%); // 7
 
     // font
     color: white;
@@ -107,15 +161,33 @@
     transform: translateY(-50%);
   }
 
+  // .movie__title
   &__title {
+    // size
     flex-basis: 100%;
   }
 
+  // .movie__video
   &__video {
+    // size
     width: 100%;
 
+    // .movie__video:hover + .movie__controls
     &:hover + .movie__controls {
-      opacity: 1;
+      // other
+      display: block;
+    }
+  }
+}
+
+// media min-width 1700px
+@media (min-width: 1700px) {
+  // .movie
+  .movie {
+    // .movie__controls
+    &__controls {
+      // size
+      height: 5vh;
     }
   }
 }

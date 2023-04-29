@@ -168,3 +168,9 @@ button {
 #__next > div {
   overflow: hidden;
 }
+video::-webkit-media-controls {
+  display: none !important;
+}
+video::-webkit-media-controls-enclosure {
+  display: none !important;
+}

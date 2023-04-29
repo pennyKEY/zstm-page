@@ -129,6 +129,12 @@
     // size
     padding: 2%;
   }
+
+  .movie {
+    &__container {
+      width: 70vw;
+    }
+  }
 }
 
 // media min-width 900px

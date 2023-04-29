@@ -1,29 +1,38 @@
-// imported libraries
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlay, faPause, faExpand } from "@fortawesome/free-solid-svg-icons";
-
 // import own hooks
 import useVideoPlayer from "@/hooks/useVideoPlayer";
+import IsPlayControl from "@/components/movie/IsPlayControl";
+import NotPlayControl from "@/components/movie/NotPlayControl";
+import Video from "@/components/movie/Video";
 
 // create Component
 export default function Movie() {
   const {
     isPlay,
-    videoRef,
-    playOrPause,
-    clickHandlerFullScreen,
     durationMovie,
     actualTimeMovie,
+    containerMovie,
+    changeMuteVideo,
+    changeProgressHandler,
+    clickHandlerFullScreen,
+    mouseDownProgressHandler,
+    mouseUpProgressHandler,
+    muteVideo,
+    playOrPause,
+    progress,
+    progressRef,
+    videoRef,
+    windowWidth,
   } = useVideoPlayer();
 
   // get time from number of seconds
   const getMinutesMovie = Math.floor(durationMovie / 60);
   const getSecondsMovie = durationMovie - getMinutesMovie * 60;
 
-  // get time from actul time move
+  // get time from actual time move
   const getMinutesActual = Math.floor(actualTimeMovie / 60);
-  const getSecondsActual = actualTimeMovie - getMinutesActual * 60;
+  const getSecondsActual = Math.floor(actualTimeMovie - getMinutesActual * 60);
 
+  // set title time
   const allTimeMovie = `${getMinutesActual}:${
     getSecondsActual <= 9 ? "0" : ""
   }${getSecondsActual}/${getMinutesMovie}:${getSecondsMovie}`;
@@ -32,34 +41,28 @@ export default function Movie() {
   return (
     <section className="movie">
       <h4 className="movie__title">Film o szkole</h4>
-      <div className="movie__container">
-        <video className="movie__video" ref={videoRef} onClick={playOrPause}>
-          <source src={require("../../../public/movie.mp4")} type="video/mp4" />
-        </video>
+      <div className="movie__container" ref={containerMovie}>
+        <Video
+          videoRef={videoRef}
+          windowWidth={windowWidth}
+          playOrPause={playOrPause}
+        />
+
         {isPlay ? (
-          <div className="movie__controls">
-            <div className="movie__progress"></div>
-            <FontAwesomeIcon
-              className="movie__pause movie__control"
-              icon={faPause}
-              onClick={playOrPause}
-            />
-            <FontAwesomeIcon
-              className="movie__expand movie__control"
-              icon={faExpand}
-              onClick={clickHandlerFullScreen}
-            />
-            <p className="movie__time">{allTimeMovie}</p>
-          </div>
+          <IsPlayControl
+            allTimeMovie={allTimeMovie}
+            progress={progress}
+            progressRef={progressRef}
+            changeProgressHandler={changeProgressHandler}
+            mouseDownProgressHandler={mouseDownProgressHandler}
+            mouseUpProgressHandler={mouseUpProgressHandler}
+            playOrPause={playOrPause}
+            muteVideo={muteVideo}
+            clickHandlerFullScreen={clickHandlerFullScreen}
+            changeMuteVideo={changeMuteVideo}
+          />
         ) : (
-          <>
-            <div className="movie__cover" onClick={playOrPause}></div>
-            <FontAwesomeIcon
-              className="movie__play movie__control"
-              icon={faPlay}
-              onClick={playOrPause}
-            />
-          </>
+          <NotPlayControl windowWidth={windowWidth} playOrPause={playOrPause} />
         )}
       </div>
     </section>
