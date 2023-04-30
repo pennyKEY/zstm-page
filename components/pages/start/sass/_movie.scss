@@ -21,7 +21,7 @@
     @include abs("", "", 0, "");
 
     // size
-    height: 7vh;
+    height: 25%;
     width: 100%;
 
     // background
@@ -48,6 +48,30 @@
 
     // background
     background-color: rgba(0, 0, 0, 0.6);
+
+    // animation
+    transform: translateY(10vh);
+    transition: 0.2s ease-in-out;
+
+    // other
+    opacity: 0;
+  }
+
+  &__description {
+    // size
+    max-width: 80%;
+    margin-bottom: 15%;
+
+    // font
+    text-align: center;
+    font-size: 15px;
+
+    // animation
+    transform: translateY(10vh);
+    transition: 0.2s ease-in-out;
+
+    // other
+    opacity: 0;
   }
 
   // .movie__expand
@@ -73,7 +97,7 @@
     // size
     border: 1px solid white;
     border-radius: 50%;
-    padding: 4%;
+    padding: 10%;
 
     // font
     color: white;
@@ -163,14 +187,61 @@
 
   // .movie__title
   &__title {
+    // position
+    position: relative;
+
     // size
-    flex-basis: 100%;
+    flex-basis: fit-content;
+    margin-bottom: 6.5%; //1.5
+
+    // font
+    text-align: center;
+    font-weight: 500;
+    font-size: 23px;
+
+    // animation
+    transform: translateY(10vh);
+    transition: 0.2s ease-in-out;
+
+    // other
+    cursor: normal;
+    opacity: 0;
+
+    // .movie__title::after
+    &::after {
+      // position
+      @include abs(-20%, -5%);
+
+      // size
+      content: "";
+      width: 20%;
+      height: 140%;
+
+      // background
+      background-color: rgba(0, 0, 0, 0.2);
+
+      // animation
+      transition: 0.2s ease-in-out;
+    }
+
+    // .movie__title:hover::after
+    &:hover::after {
+      // size
+      width: 110% !important;
+    }
   }
 
   // .movie__video
   &__video {
     // size
     width: 100%;
+
+    // animation
+    transform: translateY(10vh);
+    transition: 0.2s ease-in-out;
+
+    // other
+    opacity: 0;
 
     // .movie__video:hover + .movie__controls
     &:hover + .movie__controls {
@@ -180,14 +251,133 @@
   }
 }
 
-// media min-width 1700px
-@media (min-width: 1700px) {
+// media orientation portrait
+@media (orientation: portrait) {
+  // .fullscreen > .movie__controls
+  .fullscreen > .movie__controls {
+    // size
+    height: 7%;
+  }
+}
+
+// media min-width 375px
+@media (min-width: 375px) {
   // .movie
   .movie {
     // .movie__controls
     &__controls {
       // size
-      height: 5vh;
+      height: 20%;
     }
+  }
+}
+
+// media min-width 425px
+@media (min-width: 425px) {
+  // .movie
+  .movie {
+    // .movie__controls
+    &__controls {
+      // size
+      height: 18%;
+    }
+  }
+}
+
+// media min-width 768px
+@media (min-width: 768px) {
+  // .movie
+  .movie {
+    // .movie__controls
+    &__controls {
+      // size
+      height: 12%;
+    }
+
+    // .movie__description
+    &__description {
+      // size
+      padding-left: 20%;
+      padding-right: 20%;
+      margin-bottom: 5%;
+
+      // font
+      font-size: 16px;
+    }
+
+    // .movie__time
+    &__time {
+      // position
+      left: 9%;
+    }
+
+    // .movie__play
+    &__play {
+      // size
+      padding: 5%;
+    }
+
+    // .movie__title
+    &__title {
+      // size
+      margin-bottom: 1.5%;
+    }
+  }
+}
+
+// media min-width 1024px
+@media (min-width: 1024px) {
+  // .movie
+  .movie {
+    // .movie__controls
+    &__controls {
+      // size
+      height: 8%;
+    }
+  }
+
+  // .fullscreen > .movie__controls
+  .fullscreen > .movie__controls {
+    // size
+    height: 6.5%;
+  }
+}
+
+// media min-width 1440px
+@media (min-width: 1440px) {
+  // .movie
+  .movie {
+    // .movie__controls
+    &__controls {
+      // size
+      height: 7%;
+    }
+  }
+}
+
+// media min-width 1700px
+@media (min-width: 1700px) {
+  // .movie
+  .movie {
+    // .movie__time
+    &__time {
+      // position
+      left: 7%;
+    }
+  }
+
+  // .fullscreen > .movie__controls
+  .fullscreen > .movie__controls {
+    // size
+    height: 5%;
+  }
+}
+
+// media orientation portrait and min-width 768px
+@media (orientation: portrait) and (min-width: 768px) {
+  // .fullscreen > .movie__controls
+  .fullscreen > .movie__controls {
+    // size
+    height: 4%;
   }
 }

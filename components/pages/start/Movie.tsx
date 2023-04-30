@@ -22,6 +22,9 @@ export default function Movie() {
     progressRef,
     videoRef,
     windowWidth,
+    coverRef,
+    descriptionRef,
+    titleRef,
   } = useVideoPlayer();
 
   // get time from number of seconds
@@ -40,7 +43,18 @@ export default function Movie() {
   // return Component
   return (
     <section className="movie">
-      <h4 className="movie__title">Film o szkole</h4>
+      <h4 className="movie__title" ref={titleRef}>
+        Film o szkole
+      </h4>
+      <p className="movie__description" ref={descriptionRef}>
+        Zespół Szkół Transportowo-Mechatronicznych w Skarżysku-Kamiennej to nowa
+        placówka powstała z połączenia dwóch szkół: Technicznych Zakładów
+        Naukowych oraz Zespołu Szkół Ponadgimnazjalnych nr. 4 Siedziba szkoły
+        mieści się przy ul. Legionów 119 w budynku dawnego TZN.Choć placówka ta
+        została powołana do życia w roku szkolnym 2009/2010 to i tak pozostaje
+        szkołą z wieloma tradycjami przekazywanymi przez lata uczniom oraz
+        absolwentom obydwu połączonych placówek.
+      </p>
       <div className="movie__container" ref={containerMovie}>
         <Video
           videoRef={videoRef}
@@ -62,7 +76,11 @@ export default function Movie() {
             changeMuteVideo={changeMuteVideo}
           />
         ) : (
-          <NotPlayControl windowWidth={windowWidth} playOrPause={playOrPause} />
+          <NotPlayControl
+            windowWidth={windowWidth}
+            playOrPause={playOrPause}
+            coverRef={coverRef}
+          />
         )}
       </div>
     </section>

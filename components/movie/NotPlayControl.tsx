@@ -6,16 +6,22 @@ import { faPlay } from "@fortawesome/free-solid-svg-icons";
 interface Props {
   windowWidth: number;
   playOrPause: () => void;
+  coverRef: React.ForwardedRef<HTMLDivElement>;
 }
 
 // create Component
-export default function NotPlayControl({ windowWidth, playOrPause }: Props) {
+export default function NotPlayControl({
+  windowWidth,
+  playOrPause,
+  coverRef,
+}: Props) {
   // return Component
   return (
     <>
       {/* display black transparent cover on video, and this cover have feature to close onClick but only for laptop */}
       <div
         className="movie__cover"
+        ref={coverRef}
         onClick={windowWidth >= 1024 ? playOrPause : () => {}}
       ></div>
 

@@ -16,6 +16,9 @@ export default function useVideoPlayer() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const progressRef = useRef<HTMLInputElement>(null);
   const containerMovie = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const descriptionRef = useRef<HTMLParagraphElement>(null);
+  const coverRef = useRef<HTMLDivElement>(null);
 
   // interval
   let interval: any;
@@ -77,6 +80,9 @@ export default function useVideoPlayer() {
       ? document.exitFullscreen()
       : containerMovie.current?.requestFullscreen();
 
+    // change class if fullscreen is show or not
+    containerMovie.current?.classList.toggle("fullscreen");
+
     // change value isFullScreen
     setIsFullScreen(!isFullScreen);
   }
@@ -129,6 +135,41 @@ export default function useVideoPlayer() {
     videoRef.current?.play();
   }
 
+  // function to animate single element
+  function animateScrollElement(element: any) {
+    // check why number is true
+    if (!element || !element.current) return null;
+
+    // get offsetTop animated element
+    const offsetTop = element.current.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight / 1.2;
+
+    // get scroll value to animate elements
+    const scrollValue = window.scrollY;
+
+    // check why can display animated element
+    if (offsetTop < windowHeight) {
+      element.current.style.transform = "none";
+      element.current.style.opacity = "1";
+    } else {
+      element.current.style.transform = "translateY(10vh)";
+      element.current.style.opacity = "0";
+    }
+
+    if (scrollValue === 0) {
+      element.current.style.transform = "translateY(10vh)";
+      element.current.style.opacity = "0";
+    }
+  }
+
+  // scroll handler
+  function scrollHandler() {
+    animateScrollElement(videoRef);
+    animateScrollElement(titleRef);
+    animateScrollElement(descriptionRef);
+    animateScrollElement(coverRef);
+  }
+
   // mount
   useEffect(() => {
     // set window width on mount
@@ -141,6 +182,12 @@ export default function useVideoPlayer() {
     const time = Math.floor(videoRef.current.duration);
     // set time
     setDurationMovie(time);
+
+    window.addEventListener("scroll", scrollHandler);
+
+    return () => {
+      window.removeEventListener("scroll", scrollHandler);
+    };
   }, []);
 
   // return values
@@ -160,5 +207,8 @@ export default function useVideoPlayer() {
     mouseDownProgressHandler,
     containerMovie,
     mouseUpProgressHandler,
+    titleRef,
+    descriptionRef,
+    coverRef,
   };
 }

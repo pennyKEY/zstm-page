@@ -49,13 +49,11 @@
     }
   }
 
-  // .news
-  .news {
-    // .news__title
-    &__title {
-      // font
-      font-size: 22px;
-    }
+  // .news__title
+  .movie__title,
+  .news__title {
+    // font
+    font-size: 22px;
   }
 
   // .link
@@ -89,12 +87,13 @@
       // font
       font-size: 17px;
     }
+  }
 
-    // .news__title
-    &__title {
-      // font
-      font-size: 26px;
-    }
+  // .news__title
+  .news__title,
+  .movie__title {
+    // font
+    font-size: 26px;
   }
 }
 
@@ -192,17 +191,18 @@
   .news {
     // size
     margin-top: 40vh;
+  }
 
-    // .news__title
-    &__title {
-      // font
-      font-size: 33px;
+  // .news__title
+  .news__title,
+  .movie__title {
+    // font
+    font-size: 33px;
 
-      // .news__title:hover::after
-      &:hover::after {
-        // size
-        width: 100%;
-      }
+    // .news__title:hover::after
+    &:hover::after {
+      // size
+      width: 100%;
     }
   }
 
