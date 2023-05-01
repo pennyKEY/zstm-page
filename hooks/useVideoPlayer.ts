@@ -1,6 +1,9 @@
 // imported libraries
 import { useEffect, useState, useRef } from "react";
 
+// imported functions
+import animateScrollElement from "../functions/animateScrollElement";
+
 // create own hook
 export default function useVideoPlayer() {
   // useState
@@ -133,33 +136,6 @@ export default function useVideoPlayer() {
 
     // play video
     videoRef.current?.play();
-  }
-
-  // function to animate single element
-  function animateScrollElement(element: any) {
-    // check why number is true
-    if (!element || !element.current) return null;
-
-    // get offsetTop animated element
-    const offsetTop = element.current.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight / 1.2;
-
-    // get scroll value to animate elements
-    const scrollValue = window.scrollY;
-
-    // check why can display animated element
-    if (offsetTop < windowHeight) {
-      element.current.style.transform = "none";
-      element.current.style.opacity = "1";
-    } else {
-      element.current.style.transform = "translateY(10vh)";
-      element.current.style.opacity = "0";
-    }
-
-    if (scrollValue === 0) {
-      element.current.style.transform = "translateY(10vh)";
-      element.current.style.opacity = "0";
-    }
   }
 
   // scroll handler

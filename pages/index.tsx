@@ -8,6 +8,7 @@ import Header from "@/components/pages/start/Header";
 import News from "@/components/pages/start/News";
 import Information from "@/components/pages/start/Information";
 import Movie from "@/components/pages/start/Movie";
+import Partnership from "@/components/pages/start/Partnership";
 
 // create Page
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
       <News />
       <Information />
       <Movie />
+      <Partnership />
     </>
   );
 }
