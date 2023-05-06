@@ -12,7 +12,7 @@ export default function Patron({ patronRef }: Props) {
   return (
     // article.patron with patronRef animation
     <article className="patron" ref={patronRef}>
-      <h3 className="patron__title title">O patronie</h3>
+      <h4 className="patron__title title">O patronie</h4>
 
       <p className="patron__description">
         Eugeniusz Felicjan Kwiatkowski (ur. 30 grudnia 1888 w Krakowie, zm. 22

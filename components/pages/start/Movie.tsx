@@ -1,8 +1,14 @@
+// imported libraries
+import dynamic from "next/dynamic";
+
 // import own hooks
 import useVideoPlayer from "@/hooks/useVideoPlayer";
-import IsPlayControl from "@/components/movie/IsPlayControl";
-import NotPlayControl from "@/components/movie/NotPlayControl";
-import Video from "@/components/movie/Video";
+
+const IsPlayControl = dynamic(() => import("@/components/movie/IsPlayControl"));
+const NotPlayControl = dynamic(
+  () => import("@/components/movie/NotPlayControl")
+);
+const Video = dynamic(() => import("@/components/movie/Video"));
 
 // create Component
 export default function Movie() {
@@ -43,9 +49,9 @@ export default function Movie() {
   // return Component
   return (
     <section className="movie">
-      <h4 className="movie__title" ref={titleRef}>
+      <h5 className="movie__title" ref={titleRef}>
         Film o szkole
-      </h4>
+      </h5>
       <p className="movie__description" ref={descriptionRef}>
         Zespół Szkół Transportowo-Mechatronicznych w Skarżysku-Kamiennej to nowa
         placówka powstała z połączenia dwóch szkół: Technicznych Zakładów

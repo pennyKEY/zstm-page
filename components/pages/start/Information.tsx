@@ -1,6 +1,9 @@
+// imported libraries
+import dynamic from "next/dynamic";
+
 // imported Components
-import School from "../../information/School";
-import Patron from "../../information/Patron";
+const School = dynamic(() => import("../../information/School"));
+const Patron = dynamic(() => import("../../information/Patron"));
 
 // imported assets
 import patron from "@/public/kwiatkowski.jpeg";

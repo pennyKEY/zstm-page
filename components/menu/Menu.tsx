@@ -1,8 +1,9 @@
 // imported libraries
 import Link from "next/link";
+import dynamic from "next/dynamic";
 
 // imported Component
-import Logo from "./Logo";
+const Logo = dynamic(() => import("./Logo"));
 
 // create Component
 export default function Menu() {

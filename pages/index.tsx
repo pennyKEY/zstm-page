@@ -2,13 +2,19 @@
 
 // imported libraries
 import Head from "next/head";
+import dynamic from "next/dynamic";
 
 // imported Components
-import Header from "@/components/pages/start/Header";
-import News from "@/components/pages/start/News";
-import Information from "@/components/pages/start/Information";
-import Movie from "@/components/pages/start/Movie";
-import Partnership from "@/components/pages/start/Partnership";
+const Header = dynamic(() => import("@/components/pages/start/Header"));
+const News = dynamic(() => import("@/components/pages/start/News"));
+const Information = dynamic(
+  () => import("@/components/pages/start/Information")
+);
+const Movie = dynamic(() => import("@/components/pages/start/Movie"));
+const Partnership = dynamic(
+  () => import("@/components/pages/start/Partnership")
+);
+const Contact = dynamic(() => import("@/components/pages/start/Contact"));
 
 // create Page
 export default function Home() {
@@ -25,6 +31,7 @@ export default function Home() {
       <Information />
       <Movie />
       <Partnership />
+      <Contact />
     </>
   );
 }

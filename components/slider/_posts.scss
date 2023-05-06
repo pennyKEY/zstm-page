@@ -10,20 +10,22 @@
     position: relative;
 
     // size
-    height: 30vh;
+    height: 23vh;
     width: 100%;
 
     // background
     background-position: center;
     background-size: cover;
 
-    // .post__bcg::after
-    &::after {
+    &_container {
+      position: relative;
+    }
+
+    &_cover {
       // position
       @include abs(0, 0);
 
       // size
-      content: "";
       width: 100%;
       height: 100%;
 
@@ -110,6 +112,7 @@
 
     // font
     font-size: 14px;
+    font-weight: 600;
   }
 }
 

@@ -1,5 +1,8 @@
+// imported libraries
+import dynamic from "next/dynamic";
+
 // imported components
-import Post from "./Post";
+const Post = dynamic(() => import("./Post"));
 
 // define Post structure to Props
 interface Post {

@@ -1,8 +1,9 @@
 // imported libraries
+import dynamic from "next/dynamic";
 import { ForwardedRef } from "react";
 
 // imported components
-import MapPost from "./MapPost";
+const MapPost = dynamic(() => import("./MapPost"));
 
 // imported assets
 import post1 from "../../public/post1.jpg";

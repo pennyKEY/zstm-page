@@ -1,6 +1,9 @@
+// imported libraries
+import dynamic from "next/dynamic";
+
 // imported Components
-import Burger from "./Burger";
-import Logo from "../menu/Logo";
+const Burger = dynamic(() => import("./Burger"));
+const Logo = dynamic(() => import("../menu/Logo"));
 
 // create Component
 export default function Collapse() {

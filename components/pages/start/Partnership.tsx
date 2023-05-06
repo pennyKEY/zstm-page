@@ -29,7 +29,7 @@ export default function Partnership() {
   // return Component
   return (
     <section className="partner">
-      <h2 className="partner__title" ref={titleRef}>
+      <h5 className="partner__title" ref={titleRef}>
         Firmy które z{" "}
         <span
           className="partner__title partner__title--special"
@@ -38,7 +38,7 @@ export default function Partnership() {
           nami
         </span>{" "}
         wspólpracują:
-      </h2>
+      </h5>
 
       <p className="partner__description" ref={descriptionRef}>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam

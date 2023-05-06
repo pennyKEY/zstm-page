@@ -12,7 +12,7 @@ export default function School({ schoolRef }: Props) {
   return (
     // article.school with schoolRef to animation
     <article className="school" ref={schoolRef}>
-      <h3 className="school__title title">O szkole</h3>
+      <h4 className="school__title title">O szkole</h4>
 
       <p className="school__description">
         Zespół Szkół Transportowo-Mechatronicznych w Skarżysku-Kamiennej to nowa

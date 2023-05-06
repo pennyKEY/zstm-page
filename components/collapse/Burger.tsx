@@ -1,5 +1,8 @@
+// imported libraries
+import dynamic from "next/dynamic";
+
 // imported Components
-import CollapseModal from "./CollapseModal";
+const CollapseModal = dynamic(() => import("./CollapseModal"));
 
 // imported own hooks
 import useBurger from "@/hooks/useBurger";

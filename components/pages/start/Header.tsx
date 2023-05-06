@@ -1,6 +1,9 @@
+// imported libraries
+import dynamic from "next/dynamic";
+
 // imported Components
-import Dots from "../../dots/Dots";
-import Rectangle from "../../shapes/Rectangle";
+const Dots = dynamic(() => import("../../dots/Dots"));
+const Rectangle = dynamic(() => import("../../shapes/Rectangle"));
 
 // imported assets
 import headerImg from "@/public/header.jpg";
@@ -25,11 +28,14 @@ export default function Header() {
 
       {/* .header__img */}
       <div className="header__img">
-        {/* set image to backgroundImage style */}
-        <div
-          className="header__img_bg"
-          style={{ backgroundImage: `url('${headerImg.src}')` }}
-        ></div>
+        {/* add Image */}
+        <div className="header__container_img">
+          <div className="header__img_frame"></div>
+          <div
+            className="header__img_bg"
+            style={{ backgroundImage: `url('${headerImg.src}')` }}
+          ></div>
+        </div>
         <div className="header__img_cover"></div>
       </div>
 

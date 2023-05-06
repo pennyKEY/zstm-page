@@ -1,10 +1,13 @@
-// imported Components
-import Posts from "../../slider/Posts";
-import Navigation from "../../navigation/Navigation";
+// imported libraries
+import dynamic from "next/dynamic";
 
 // imported own hooks
 import useAnimations from "@/hooks/useAnimations";
 import useNavigationPosts from "@/hooks/useNavigationPosts";
+
+// imported Components
+const Posts = dynamic(() => import("../../slider/Posts"));
+const Navigation = dynamic(() => import("../../navigation/Navigation"));
 
 // create component
 export default function News() {
@@ -17,10 +20,10 @@ export default function News() {
   // return component
   return (
     <section className="news">
-      {/* create h3.news__title with titleNewsRef to animation */}
-      <h3 className="news__title" ref={titleNewsRef}>
+      {/* create h2.news__title with titleNewsRef to animation */}
+      <h2 className="news__title" ref={titleNewsRef}>
         Aktualności
-      </h3>
+      </h2>
 
       {/* create p.news__description with descriptionNewsRef to animation  */}
       <p className="news__description" ref={descriptionNewsRef}>

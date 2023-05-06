@@ -1,13 +1,11 @@
 // imported libraries
+import dynamic from "next/dynamic";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPause, faExpand } from "@fortawesome/free-solid-svg-icons";
 
 // imported Components
-import MuteIcons from "@/components/movie/MuteIcons";
-import NotMuteIcons from "@/components/movie/NotMuteIcons";
-
-// imported own hooks
-// import useVideoPlayer from "../../hooks/useVideoPlayer";
+const MuteIcons = dynamic(() => import("@/components/movie/MuteIcons"));
+const NotMuteIcons = dynamic(() => import("@/components/movie/NotMuteIcons"));
 
 // define Props
 interface Props {
