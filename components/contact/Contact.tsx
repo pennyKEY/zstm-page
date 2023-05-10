@@ -1,5 +1,9 @@
+// imported Components
+import Btn from "./Btn";
+import Fields from "./Fields";
+
 // imported own hook
-import useContact from "@/hooks/useContact";
+import useContact from "@/hooks/start-page/useContact";
 
 // create Component
 export default function Contact() {
@@ -9,6 +13,11 @@ export default function Contact() {
     emailRef,
     nameRef,
     textRef,
+    btnRef,
+    titleRef,
+    emailFieldRef,
+    nameFieldRef,
+    textFieldRef,
     // useState
     emailActive,
     nameActive,
@@ -22,60 +31,25 @@ export default function Contact() {
   return (
     <footer className="footer">
       <form className="contact" method="POST">
-        <h6 className="contact__title">Kontakt</h6>
-        <label className="contact__field" htmlFor="name">
-          <input
-            className="contact__input"
-            type="text"
-            id="name"
-            ref={nameRef}
-            onBlur={() => blurHandler("NAME")}
-            onFocus={() => focusHandler("NAME")}
-          />
-          <span
-            className={`contact__field_name ${
-              nameActive ? "contact__field_name--active" : ""
-            }`}
-          >
-            Imię i nazwisko
-          </span>
-        </label>
-        <label className="contact__field" htmlFor="email">
-          <input
-            className="contact__input"
-            type="email"
-            id="email"
-            ref={emailRef}
-            onBlur={() => blurHandler("EMAIL")}
-            onFocus={() => focusHandler("EMAIL")}
-          />
-          <span
-            className={`contact__field_name ${
-              emailActive ? "contact__field_name--active" : ""
-            }`}
-          >
-            E-mail
-          </span>
-        </label>
-        <label className="contact__field contact__field--large" htmlFor="text">
-          <textarea
-            className="contact__input"
-            id="text"
-            ref={textRef}
-            onBlur={() => blurHandler("TEXT")}
-            onFocus={() => focusHandler("TEXT")}
-          ></textarea>
-          <span
-            className={`contact__field_name ${
-              textActive ? "contact__field_name--active" : ""
-            }`}
-          >
-            Treść twojej wiadomości
-          </span>
-        </label>
-        <button type="submit" className="contact__btn btn">
-          Wyślij!
-        </button>
+        <h6 className="contact__title" ref={titleRef}>
+          Kontakt
+        </h6>
+
+        <Fields
+          emailRef={emailRef}
+          nameRef={nameRef}
+          textRef={textRef}
+          emailFieldRef={emailFieldRef}
+          nameFieldRef={nameFieldRef}
+          textFieldRef={textFieldRef}
+          emailActive={emailActive}
+          nameActive={nameActive}
+          textActive={textActive}
+          blurHandler={blurHandler}
+          focusHandler={focusHandler}
+        />
+
+        <Btn btnRef={btnRef} />
       </form>
     </footer>
   );

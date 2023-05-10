@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 const CollapseModal = dynamic(() => import("./CollapseModal"));
 
 // imported own hooks
-import useBurger from "@/hooks/useBurger";
+import useBurger from "@/hooks/start-page/useBurger";
 
 // create Component
 export default function Burger() {

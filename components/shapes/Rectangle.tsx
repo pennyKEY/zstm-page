@@ -1,5 +1,5 @@
 // imported own hooks
-import useScroll from "@/hooks/useScroll";
+import useScroll from "@/hooks/start-page/useScroll";
 
 // create Component
 export default function Rectangle() {

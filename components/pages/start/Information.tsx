@@ -9,7 +9,7 @@ const Patron = dynamic(() => import("../../information/Patron"));
 import patron from "@/public/kwiatkowski.jpeg";
 
 // imported own hooks
-import useAnimations from "@/hooks/useAnimations";
+import useAnimations from "@/hooks/start-page/useAnimations";
 
 // create Component
 export default function Information() {

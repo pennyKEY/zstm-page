@@ -2,7 +2,7 @@
 import Image from "next/image";
 
 // imported own hooks
-import usePartner from "@/hooks/usePartner";
+import usePartner from "@/hooks/start-page/usePartner";
 
 // imported assets
 import zamel from "@/public/partnership/zamel.png";

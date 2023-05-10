@@ -2,7 +2,7 @@
 import { useRef, useEffect } from "react";
 
 // imported functions
-import animateScrollElement from "../functions/animateScrollElement";
+import animateScrollElement from "../../functions/animateScrollElement";
 
 // create own hook
 export default function usePartner() {

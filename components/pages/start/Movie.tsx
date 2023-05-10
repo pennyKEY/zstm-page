@@ -2,7 +2,7 @@
 import dynamic from "next/dynamic";
 
 // import own hooks
-import useVideoPlayer from "@/hooks/useVideoPlayer";
+import useVideoPlayer from "@/hooks/start-page/useVideoPlayer";
 
 const IsPlayControl = dynamic(() => import("@/components/movie/IsPlayControl"));
 const NotPlayControl = dynamic(

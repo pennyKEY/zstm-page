@@ -2,8 +2,8 @@
 import dynamic from "next/dynamic";
 
 // imported own hooks
-import useAnimations from "@/hooks/useAnimations";
-import useNavigationPosts from "@/hooks/useNavigationPosts";
+import useAnimations from "@/hooks/start-page/useAnimations";
+import useNavigationPosts from "@/hooks/start-page/useNavigationPosts";
 
 // imported Components
 const Posts = dynamic(() => import("../../slider/Posts"));

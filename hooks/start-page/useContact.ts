@@ -1,5 +1,8 @@
 // imported libraries
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
+
+// imported functions
+import animateScrollElement from "@/functions/animateScrollElement";
 
 // create own hook
 export default function useContact() {
@@ -7,6 +10,11 @@ export default function useContact() {
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const textRef = useRef<HTMLTextAreaElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const btnRef = useRef<HTMLButtonElement>(null);
+  const nameFieldRef = useRef<HTMLLabelElement>(null);
+  const emailFieldRef = useRef<HTMLLabelElement>(null);
+  const textFieldRef = useRef<HTMLLabelElement>(null);
 
   // useState
   const [nameActive, setNameActive] = useState<boolean>(false);
@@ -31,17 +39,38 @@ export default function useContact() {
     }
   }
 
+  function scrollHandler() {
+    animateScrollElement(nameFieldRef);
+    animateScrollElement(emailFieldRef);
+    animateScrollElement(textFieldRef);
+    animateScrollElement(titleRef);
+    animateScrollElement(btnRef);
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", scrollHandler);
+
+    return () => {
+      window.removeEventListener("scroll", scrollHandler);
+    };
+  }, []);
+
   // return own hook
   return {
     // useRef
     nameRef,
     emailRef,
     textRef,
+    titleRef,
+    btnRef,
+    emailFieldRef,
+    nameFieldRef,
+    textFieldRef,
     // useState
     nameActive,
     emailActive,
     textActive,
-    // methodd
+    // method
     focusHandler,
     blurHandler,
   };
