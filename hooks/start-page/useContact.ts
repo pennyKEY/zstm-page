@@ -45,6 +45,28 @@ export default function useContact() {
     animateScrollElement(textFieldRef);
     animateScrollElement(titleRef);
     animateScrollElement(btnRef);
+
+    const scrollValue = window.scrollY;
+    const heightAllPage = document.body.scrollHeight - window.innerHeight;
+
+    if (!nameFieldRef.current || !nameFieldRef) return;
+    if (!emailFieldRef.current || !emailFieldRef) return;
+    if (!textFieldRef.current || !textFieldRef) return;
+    if (!btnRef.current || !btnRef) return;
+
+    if (scrollValue === heightAllPage) {
+      nameFieldRef.current.style.opacity = "1";
+      nameFieldRef.current.style.transform = "none";
+
+      emailFieldRef.current.style.opacity = "1";
+      emailFieldRef.current.style.transform = "none";
+
+      textFieldRef.current.style.opacity = "1";
+      textFieldRef.current.style.transform = "none";
+
+      btnRef.current.style.opacity = "1";
+      btnRef.current.style.transform = "none";
+    }
   }
 
   useEffect(() => {

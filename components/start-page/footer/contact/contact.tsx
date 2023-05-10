@@ -29,28 +29,26 @@ export default function Contact() {
 
   // return Component
   return (
-    <footer className="footer">
-      <form className="contact" method="POST">
-        <h6 className="contact__title" ref={titleRef}>
-          Kontakt
-        </h6>
+    <form className="contact" method="POST">
+      <h6 className="contact__title" ref={titleRef}>
+        Kontakt
+      </h6>
 
-        <Fields
-          emailRef={emailRef}
-          nameRef={nameRef}
-          textRef={textRef}
-          emailFieldRef={emailFieldRef}
-          nameFieldRef={nameFieldRef}
-          textFieldRef={textFieldRef}
-          emailActive={emailActive}
-          nameActive={nameActive}
-          textActive={textActive}
-          blurHandler={blurHandler}
-          focusHandler={focusHandler}
-        />
+      <Fields
+        emailRef={emailRef}
+        nameRef={nameRef}
+        textRef={textRef}
+        emailFieldRef={emailFieldRef}
+        nameFieldRef={nameFieldRef}
+        textFieldRef={textFieldRef}
+        emailActive={emailActive}
+        nameActive={nameActive}
+        textActive={textActive}
+        blurHandler={blurHandler}
+        focusHandler={focusHandler}
+      />
 
-        <Btn btnRef={btnRef} />
-      </form>
-    </footer>
+      <Btn btnRef={btnRef} />
+    </form>
   );
 }
