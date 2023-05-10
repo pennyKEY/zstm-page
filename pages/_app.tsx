@@ -5,8 +5,10 @@ import dynamic from "next/dynamic";
 import { Titillium_Web } from "next/font/google";
 
 // imported Components
-const Menu = dynamic(() => import("@/components/menu/Menu"));
-const Collapse = dynamic(() => import("@/components/collapse/Collapse"));
+const Menu = dynamic(() => import("@/components/navigation/menu/menu"));
+const Collapse = dynamic(
+  () => import("@/components/navigation/collapse/collapse")
+);
 
 // imported styles
 import "@/styles/global.scss";

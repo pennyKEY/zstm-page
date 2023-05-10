@@ -1,11 +1,9 @@
-// imported libraries
+// imported variables
 @import "./_variables.scss";
-@import "./_variables.scss";
-@import "../components/collapse/collapse.scss";
-@import "../components/menu/menu.scss";
-@import "../components/pages/start/sass/header.scss";
-@import "../components/dots/dots.scss";
-@import "../components/shapes/shapes.scss";
+
+// imported components styles
+@import "../components/navigation/navigation.scss";
+@import "../components/start-page/styles/index.scss";
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126

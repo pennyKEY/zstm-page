@@ -1,0 +1,223 @@
+// imported other styles
+@import "@/styles/_variables.scss";
+@import "./_animations.scss";
+@import "../partnership/_partnership.scss";
+@import "../news/_news.scss";
+@import "../information/_information.scss";
+@import "../movie/_movie.scss";
+@import "../footer/contact/_contact.scss";
+
+// .header
+.header {
+  // position
+  @include flexContainer($wrap: wrap, $jc: center, $ai: center);
+
+  // size
+  margin-top: 10vh;
+  width: 100vw;
+
+  // .header__btn
+  &__btn {
+    // position
+    position: relative;
+    z-index: 1;
+
+    // size
+    border-radius: 6px;
+    border: 1px solid $main-color;
+    padding: 10px 0;
+    width: 70%;
+
+    // background
+    background: $main-color;
+
+    // font
+    color: $second-color;
+    font-size: 13px;
+    font-weight: 500;
+
+    // animation
+    transition: 0.3s ease-in-out;
+    animation: showBtn 0.2s 0.9s ease-in-out forwards;
+
+    // other
+    cursor: pointer;
+    opacity: 0;
+    overflow: hidden;
+
+    // .header__btn::after
+    &::after {
+      // position
+      @include abs(0, -10%);
+      z-index: -1;
+
+      // size
+      content: "";
+      width: 120%;
+      height: 100%;
+
+      // background
+      background-color: $second-color;
+
+      // animation
+      transform: translateX(-100%);
+      transition: 0.3s ease-in-out;
+    }
+
+    // .header__btn:hover
+    &:hover {
+      // font
+      color: $main-color;
+    }
+
+    // .header__btn:hover::after
+    &:hover::after {
+      // animation
+      transform: translateX(0);
+    }
+
+    // .header__btn--outline
+    &--outline {
+      // size
+      border: 1px solid $main-color;
+
+      // background
+      background: transparent;
+
+      // font
+      color: $main-color;
+
+      // animation
+      transition: 0.3s ease-in-out;
+      animation-delay: 0.7s;
+
+      // .header__btn--outline:hover
+      &:hover {
+        // font
+        color: $second-color;
+      }
+
+      // .header__btn--outline::after
+      &::after {
+        // position
+        top: 0%;
+        left: 0;
+
+        // size
+        width: 100%;
+        height: 100%;
+
+        // background
+        background-color: $main-color;
+
+        // animation
+        transform: scaleX(0);
+      }
+
+      // .header__btn--outline:hover::after
+      &:hover::after {
+        // animation
+        transform: scaleX(1);
+      }
+    }
+
+    // .header__btn_group
+    &_group {
+      // position
+      @include flexContainer(row, wrap, center, center, flex-start, auto, 2vh);
+
+      // size
+      margin-top: 5vh;
+      width: 100%;
+    }
+  }
+
+  &__container_img {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+  }
+
+  // .header__img
+  &__img {
+    // position
+    position: relative;
+
+    // size
+    margin-top: 2vh;
+    height: 20vh;
+    width: 85vw;
+
+    // animation
+    transform: translateY(30%);
+    animation: show 0.5s 0.2s ease-in-out forwards;
+
+    // other
+    opacity: 0;
+
+    // .header__img_bg
+    &_bg {
+      // position
+      @include abs(0, 0);
+
+      // size
+      width: 100%;
+      height: 100%;
+
+      // background
+      background-size: cover;
+      background-position: center;
+    }
+
+    // .header__img_cover
+    &_cover {
+      // position
+      @include abs(0, 0);
+
+      // size
+      height: 100%;
+      width: 100%;
+
+      // background
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    &_frame {
+      @include abs(5%, 5%);
+      z-index: -1;
+
+      // size
+      border: 1px solid black;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  // .header__title
+  &__title {
+    // size
+    width: 85%;
+
+    // font
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    // animation
+    animation: show 0.5s 0.2s ease-in-out forwards;
+    transform: translateY(30%);
+
+    // other
+    opacity: 0;
+
+    // .header__title--green
+    &--green {
+      // font
+      color: $main-color;
+    }
+  }
+}
+
+// import media queries
+@import "./_mq.scss";
