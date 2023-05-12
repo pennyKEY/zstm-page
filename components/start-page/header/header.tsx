@@ -1,5 +1,6 @@
 // imported libraries
 import dynamic from "next/dynamic";
+import Image from "next/image";
 
 // imported Components
 const Dots = dynamic(() => import("./dots/Dots"));
@@ -31,10 +32,16 @@ export default function Header() {
         {/* add Image */}
         <div className="header__container_img">
           <div className="header__img_frame"></div>
-          <div
+          <Image
+            className="header__img_bg"
+            src={headerImg.src}
+            alt={"Nasza szkoła"}
+            fill
+          />
+          {/* <div
             className="header__img_bg"
             style={{ backgroundImage: `url('${headerImg.src}')` }}
-          ></div>
+          ></div> */}
         </div>
         <div className="header__img_cover"></div>
       </div>

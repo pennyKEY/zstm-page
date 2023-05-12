@@ -1,5 +1,6 @@
 // imported libraries
 import dynamic from "next/dynamic";
+import Image from "next/image";
 
 // imported Components
 const School = dynamic(() => import("./school/school"));
@@ -24,11 +25,13 @@ export default function Information() {
       <Patron patronRef={patronRef} />
 
       {/* show img with patron source */}
-      <div
-        className="information__img"
-        style={{ backgroundImage: `url('${patron.src}')` }}
-        ref={patronImgRef}
-      ></div>
+      <div className="information__img" ref={patronImgRef}>
+        <Image
+          src={patron.src}
+          alt={"Eugeniusz Kwiatkowski nasz patron"}
+          fill
+        />
+      </div>
     </section>
   );
 }

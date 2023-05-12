@@ -4,18 +4,8 @@
   &__img {
     // size
     margin: 2%;
-    width: 30%;
-  }
-}
-
-// media min-width 1440px
-@media (min-width: 1440px) {
-  // .logo
-  .logo {
-    // .logo__img
-    &__img {
-      // size
-      width: 35%;
-    }
+    width: 100%;
+    height: 5vh;
+    // height: fit-content;
   }
 }

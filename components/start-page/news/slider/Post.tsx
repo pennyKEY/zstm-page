@@ -19,7 +19,7 @@ export default function Post({ title, img }: Props) {
     <article className="post">
       {/* set imgPost to backgroundImage  */}
       <div className="post__bcg_container">
-        <Image
+        {/* <Image
           className="post__bcg"
           src={img}
           alt={`image post ${title}`}
@@ -33,6 +33,12 @@ export default function Post({ title, img }: Props) {
             width: "100%",
             height: "100%",
           }}
+        /> */}
+        <Image
+          className="post__bcg"
+          src={img}
+          alt={`image post ${title}`}
+          fill
         />
         <div className="post__bcg_cover"></div>
       </div>

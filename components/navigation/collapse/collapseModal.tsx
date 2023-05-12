@@ -23,7 +23,7 @@ export default function CollapseModal({ modalDivRef }: Props) {
             className={`modal__link ${router.pathname === "/" && "active"}`}
             href="/"
           >
-            Start
+            Główna strona
           </Link>
         </li>
 

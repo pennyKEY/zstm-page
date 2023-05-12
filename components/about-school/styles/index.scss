@@ -1,0 +1,21 @@
+@import "../header/_header.scss";
+@import "../history/_history.scss";
+@import "../navigation/_navigation.scss";
+
+.section {
+  @include flexContainer(row, wrap, center, flex-start, flex-start, auto, 0);
+
+  width: 100vw;
+}
+
+.rectangle_school {
+  @include abs(35%, 10%);
+  z-index: -1;
+
+  width: 30vw;
+  height: 30vw;
+
+  border: 1px solid black;
+
+  transform: rotate(45deg);
+}

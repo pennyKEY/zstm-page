@@ -13,12 +13,13 @@
     height: 23vh;
     width: 100%;
 
-    // background
-    background-position: center;
-    background-size: cover;
+    object-fit: cover;
+    object-position: center;
 
     &_container {
       position: relative;
+
+      height: 30vh;
     }
 
     &_cover {

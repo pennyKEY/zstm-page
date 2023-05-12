@@ -5,8 +5,12 @@ import Fields from "./fields";
 // imported own hook
 import useContact from "@/hooks/start-page/useContact";
 
+interface Props {
+  contactRef: React.ForwardedRef<HTMLFormElement>;
+}
+
 // create Component
-export default function Contact() {
+export default function Contact({ contactRef }: Props) {
   // use own hook
   const {
     // useRef
@@ -29,7 +33,7 @@ export default function Contact() {
 
   // return Component
   return (
-    <form className="contact" method="POST">
+    <form className="contact" method="POST" ref={contactRef}>
       <h6 className="contact__title" ref={titleRef}>
         Kontakt
       </h6>

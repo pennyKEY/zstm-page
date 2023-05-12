@@ -4,11 +4,14 @@
 // .menu
 .menu {
   // position
+  position: relative;
   @include flexContainer(row, no-wrap, flex-start, center, flex-start, auto, 0);
   display: none;
+  z-index: 2;
 
   // size
   width: 100vw;
+  padding: 0.3%;
 
   // font
   color: #000;
@@ -99,7 +102,7 @@
     gap: 4%;
 
     // size
-    width: 70%;
+    width: 85%;
   }
 }
 

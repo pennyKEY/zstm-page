@@ -12,8 +12,12 @@ export default function Menu() {
       <Logo />
       <ul className="menu__list_items">
         <li className="menu__item">
-          <Link className="menu__link" href="/">
-            Start
+          <Link
+            className="menu__link"
+            href="/"
+            aria-label="this link move you to main page"
+          >
+            Główna strona
           </Link>
         </li>
         <li className="menu__item">
