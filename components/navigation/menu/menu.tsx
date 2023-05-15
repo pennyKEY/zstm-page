@@ -26,8 +26,8 @@ export default function Menu() {
           </Link>
         </li>
         <li className="menu__item">
-          <Link className="menu__link" href="/dziennik">
-            Dziennik Vulcan
+          <Link className="menu__link" href="/kierunki">
+            Kierunki
           </Link>
         </li>
         <li className="menu__item">

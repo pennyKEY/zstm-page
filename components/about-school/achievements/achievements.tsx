@@ -45,38 +45,31 @@ export default function Achievements({ achievementsRef }: Props) {
         <div className="article__cover" ref={imageRef}></div>
       </div>
       <p className="article__text" ref={textRef}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
-        obcaecati, hic accusantium doloribus, libero laudantium atque, alias
-        temporibus sunt cum inventore laborum animi omnis totam quos voluptates
-        similique qui nulla molestias distinctio voluptas consequatur ea eos et!
-        Beatae perferendis excepturi harum quia? Accusantium soluta earum ut
-        quas. Dignissimos consectetur omnis dolor animi magnam deleniti beatae,
-        voluptas et cum perferendis ex laudantium reiciendis consequatur aut nam
-        reprehenderit autem nemo enim eaque odio incidunt! Saepe esse repellat
-        architecto, magni quisquam dolor veniam cupiditate nisi aliquid numquam
-        consequuntur aut dolorum rerum cum fuga laborum optio, doloribus unde
-        nesciunt qui laudantium iusto distinctio. Reiciendis adipisci ut ullam,
-        dicta molestiae hic perspiciatis sequi corrupti soluta nemo voluptate
-        perferendis corporis sunt ea nostrum officiis nihil beatae ipsum! Aut
-        molestias nesciunt eligendi eaque fugit est maxime ipsam, rem dicta,
-        blanditiis nisi eos optio fuga sint. Qui ut ab placeat magnam ad
-        voluptate provident accusantium, voluptatem corrupti asperiores mollitia
-        expedita, velit a saepe sint excepturi non? Molestiae vero reiciendis
-        incidunt quis vel, rerum hic architecto, neque rem dicta iure? Quidem
-        molestias quisquam iusto laboriosam magnam fuga repellendus blanditiis
-        excepturi obcaecati sunt error facere possimus quibusdam ad, aliquid
-        recusandae reiciendis accusamus suscipit id beatae eaque! Maiores
-        voluptas fugiat debitis nobis ut corrupti, illum pariatur itaque harum
-        iusto ipsum expedita. Ea sed quo voluptatum molestiae ad quaerat, esse
-        unde ullam facilis quasi veniam debitis, laborum impedit dicta
-        quibusdam? Repellat voluptate, voluptatibus blanditiis ipsa, laudantium
-        veritatis atque laborum explicabo porro, beatae earum assumenda! Eos
-        doloremque quibusdam vero dolores esse odio iure reiciendis commodi?
-        Quos, rem laudantium accusamus soluta ducimus reprehenderit aliquid quam
-        dolore voluptatibus voluptas praesentium cumque. Suscipit quaerat amet,
-        illum pariatur dolorem quasi cumque, nulla voluptas nostrum eum optio
-        saepe velit possimus sapiente laudantium minus dicta! Tenetur qui a nisi
-        autem nam quasi consectetur iusto voluptate odit! Id, in obcaecati!
+        W wyniku połączenia ZSTM stał się jedną z większych szkół w naszym
+        powiecie kształcącą młodzież w interesujących i atrakcyjnych z punktu
+        widzenia możliwości na rynku pracy kierunkach: technik mechatronik,
+        technik mechanik, technik logistyk, technik transportu kolejowego,
+        technik dróg i mostów kolejowych, technik elektroenergetyk transportu
+        szynowego i technik BHP. W ofercie edukacyjnej szkoły na rok 2015/2016
+        znalazły się nowe zawody poszukiwane na rynku pracy w naszym regionie
+        jak: technik geolog, technik ochrony środowiska i technik usług
+        pocztowych i finansowych. ZSTM jest szkoła otwartą wobec młodzieży z
+        różnych środowisk, wśród uczniów przeważają uczniowie pochodzący z
+        okolic Skarżyska – Kamiennej, w tym w bardzo wysokim stopniu z terenów
+        wiejskich. Duża część uczniów boryka się z poważnymi problemami
+        rodzinnymi i materialnym i wszystkim im szkoła stara się zapewnić jak
+        najlepszą pomoc i opiekę. Mocną stroną placówki jest współpraca z
+        zakładami pracy. Jako jedyna szkoła w powiecie skarżyskim zapewniamy
+        naszym absolwentom pracę na mocy podpisania umów stypendialnych z Mesko
+        S.A. i PKP PLK S.A. Kształcenie praktyczne w szkole prowadzone jest w
+        ścisłym powiązaniu z pracodawcą. Zakłady pracy wspierają szkołę między
+        innymi poprzez doposażenie pracowni w pomoce dydaktyczne, umożliwienie
+        odbywania zajęć praktycznych i praktyk zawodowych oraz wycieczek
+        przedmiotowych.ZSTM jest jedyną szkołą w województwie świętokrzyskim,
+        która przystąpiła do programu stypendialnego PKP Polskie Linie Kolejowe
+        S.A., skierowanego do uczniów 14 szkół w Polsce. Do tej pory stypendium
+        otrzymało ponad 60 uczniów, a sponsorzy zainwestowali w ich
+        wykształcenie prawie 1 milion złotych.
       </p>
     </article>
   );

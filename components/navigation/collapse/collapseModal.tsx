@@ -42,10 +42,12 @@ export default function CollapseModal({ modalDivRef }: Props) {
         <li className="modal__item">
           {/* check why actual path is equal "/" */}
           <Link
-            className={`modal__link ${router.pathname === "" && "active"}`}
-            href="/"
+            className={`modal__link ${
+              router.pathname === "/kierunki" && "active"
+            }`}
+            href="/kierunki"
           >
-            Dziennik Vulcan
+            Kierunki
           </Link>
         </li>
 

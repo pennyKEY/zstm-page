@@ -9,7 +9,9 @@ export default function Header() {
         className="header_2__img"
         src={headerImg.src}
         alt="Nasza innowacja wojskowa"
-        fill={true}
+        fill
+        priority={true}
+        quality={70}
       />
       <div className="header_2__bcg"></div>
       <div className="header_2__cover"></div>

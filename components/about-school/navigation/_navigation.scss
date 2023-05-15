@@ -1,5 +1,5 @@
 .navigation {
-  @include abs(10%, -5%);
+  @include abs(13%, -5%);
   display: none;
 
   transform: translateY(10vh);
@@ -63,7 +63,7 @@
 @media (min-width: 1440px) {
   .navigation {
     &__link {
-      font-size: 22px;
+      font-size: 19px;
     }
   }
 }

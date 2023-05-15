@@ -13,7 +13,7 @@
   }
 
   &__count {
-    @include abs(10%, "", "", -30%);
+    @include abs(10%, "", "", -40%);
     display: none;
 
     font-size: 205px;
@@ -122,10 +122,6 @@
     &__container_img {
       height: 22vh;
     }
-
-    &__text {
-      font-size: 16px;
-    }
   }
 }
 
@@ -143,7 +139,7 @@
 
 @media (min-width: 1024px) {
   .article {
-    width: 60%;
+    width: 52%;
 
     &__container_img {
       height: 27vh;
@@ -179,10 +175,6 @@
 
     &__title {
       margin-top: 2.5%;
-    }
-
-    &__text {
-      font-size: 18px;
     }
   }
 }

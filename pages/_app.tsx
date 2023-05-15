@@ -24,6 +24,7 @@ config.autoAddCss = false;
 const ttw = Titillium_Web({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
+  display: "swap",
 });
 
 // create component

@@ -1,13 +1,14 @@
 // imported libraries
 import Head from "next/head";
+import dynamic from "next/dynamic";
 
 // imported components
-import Header from "./header/header";
-import History from "./history/history";
-import Achievements from "./achievements/achievements";
-import Directions from "./directions/directions";
-import Footer from "../start-page/footer/footer";
-import Navigation from "./navigation/navigation";
+const Header = dynamic(() => import("./header/header"));
+const History = dynamic(() => import("./history/history"));
+const Achievements = dynamic(() => import("./achievements/achievements"));
+const Directions = dynamic(() => import("./directions/directions"));
+const Footer = dynamic(() => import("../start-page/footer/footer"));
+const Navigation = dynamic(() => import("./navigation/navigation"));
 
 import useScroll from "@/hooks/start-page/useScroll";
 import useNavigation from "@/hooks/about-school/useNavigation";
