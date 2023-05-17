@@ -1,5 +1,5 @@
-.navigation {
-  @include abs(13%, -5%);
+.navigation_school {
+  @include abs(16.5%, 3%);
   display: none;
 
   transform: translateY(10vh);
@@ -55,13 +55,13 @@
 }
 
 @media (min-width: 1024px) {
-  .navigation {
+  .navigation_school {
     display: flex;
   }
 }
 
 @media (min-width: 1440px) {
-  .navigation {
+  .navigation_school {
     &__link {
       font-size: 19px;
     }

@@ -1,5 +1,7 @@
 import Head from "next/head";
 
+import Header from "./header/header";
+
 export default function DirectionsPage() {
   return (
     <>
@@ -8,6 +10,7 @@ export default function DirectionsPage() {
         <title>Kierunki</title>
       </Head>
       {/* show Components to this page */}
+      <Header />
     </>
   );
 }

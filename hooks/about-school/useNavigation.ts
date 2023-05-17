@@ -21,10 +21,14 @@ export default function useNavigation() {
     if (!linkDirectionsRef || !linkDirectionsRef.current) return;
     if (!linkContactRef || !linkContactRef.current) return;
 
-    linkHistoryRef.current.classList.remove("navigation__item--active");
-    linkAchievementsRef.current.classList.remove("navigation__item--active");
-    linkDirectionsRef.current.classList.remove("navigation__item--active");
-    linkContactRef.current.classList.remove("navigation__item--active");
+    linkHistoryRef.current.classList.remove("navigation_school__item--active");
+    linkAchievementsRef.current.classList.remove(
+      "navigation_school__item--active"
+    );
+    linkDirectionsRef.current.classList.remove(
+      "navigation_school__item--active"
+    );
+    linkContactRef.current.classList.remove("navigation_school__item--active");
   }
 
   function scrollHandler() {
@@ -66,13 +70,17 @@ export default function useNavigation() {
       window.scrollY + window.innerHeight / 3 >= offsetContact ||
       window.scrollY === document.body.scrollHeight - window.innerHeight
     ) {
-      linkContactRef.current.classList.add("navigation__item--active");
+      linkContactRef.current.classList.add("navigation_school__item--active");
     } else if (window.scrollY >= offsetDirections) {
-      linkDirectionsRef.current.classList.add("navigation__item--active");
+      linkDirectionsRef.current.classList.add(
+        "navigation_school__item--active"
+      );
     } else if (window.scrollY >= offsetAchievements) {
-      linkAchievementsRef.current.classList.add("navigation__item--active");
+      linkAchievementsRef.current.classList.add(
+        "navigation_school__item--active"
+      );
     } else if (window.scrollY >= offsetHistory) {
-      linkHistoryRef.current.classList.add("navigation__item--active");
+      linkHistoryRef.current.classList.add("navigation_school__item--active");
     }
   }
 
